@@ -1,0 +1,43 @@
+ <div class="row">
+    <div class="col-md-12">
+    
+    <nav class= "navbar navbar-default" role= "navigation" >
+    <div class= "navbar-header" >
+         <a class="btn btn-lg btn-success" href="#/edit-product/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new Product</a>
+    </div>
+    </nav>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>Product Name&nbsp;</th>
+        <th>Product Number&nbsp;</th>
+        <th>Product Description&nbsp;</th>
+        <th>Product Stock&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in filteredProducts"> 
+                <td>{{data.productName}}</td>
+                <td>{{data.productNumber}}</td>
+                <td>{{data.productDescription}}</td>
+                <td>{{data.productStock}}</td>
+                <td><a href="#/edit-product/{{data.productNumber}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Product</a></td>
+            </tr>
+        </tbody>
+        </table>
+ <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+    </div>
+</div>
+
+
+
+      
+
+
+    <div class="col-md-12" ng-show="products.length == 0">
+        <div class="col-md-12">
+            <h4>No customers found</h4>
+        </div>
+    </div>
+
+       
+
+</div>
