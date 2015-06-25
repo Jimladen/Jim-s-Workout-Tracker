@@ -55,6 +55,13 @@ app.factory("services", ['$http', function($http) {
     })
   }
 
+ obj.getExercises = function() {
+    return $http.get('exercises.json').success(function(data) {
+      return data.data;
+    })
+  }
+  
+
     return obj;   
 }]);
 
@@ -129,10 +136,30 @@ app.controller ('productListCtrl', function ($scope, services, $log){
       $scope.filteredProducts = $scope.products.slice(begin, end);
     });
   });
+})
+
+app.controller('exerciseListCtrl', function ($scope, services, $log) {
+   $scope.filteredExercises = []
+  ,$scope.currentPage = 1
+  ,$scope.numPerPage = 10
+  ,$scope.maxSize = 10;
+
+  services.getExercises().then(function(data){
+    $scope.exercises = data.data;
 
 
+    console.log(data.data);
 
+    $scope.totalItems = data.data.length;
 
+     $scope.$watch("currentPage + numPerPage", function() {
+      var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+      , end = begin + $scope.numPerPage;
+
+      $scope.filteredExercises = $scope.exercises.slice(begin, end);
+    });
+
+  })
 })
 
 // product new / edit / delete 
@@ -196,6 +223,16 @@ app.config(['$routeProvider',
         resolve: {
           products: function(services, $route) {
             return services.getProducts();
+          }
+        }
+      })
+      .when('/exercises', {
+        title: 'Exercises',
+        templateUrl: 'partials/exercises.html',
+        controller: 'exerciseListCtrl',
+        resolve: {
+          exercises: function(services, $route){
+            return services.getExercises();
           }
         }
       })
