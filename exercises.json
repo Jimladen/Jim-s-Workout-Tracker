@@ -1,230 +1,1426 @@
-[
-    {
-        "exerciseName": " Ab Crunch Machine ",
-        "muscleGroup": " Abdominals "
+[{
+        "exerciseName": "Ab Crunch Machine",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Shrugs",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Adductor",
+        "muscleGroup": "Adductors"
+    }, {
+        "exerciseName": "Advanced Kettlebell Windmill",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "All Fours Quad Stretch",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Alternate Heel Touchers",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Alternate Leg Diagonal Bound",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Alternating Deltoid Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Alternating Hang Clean",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Alternating Kettlebell Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Ankle Circles",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Anterior Tibialis-SMR",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Arm Circles",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Around The Worlds",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Atlas Stones",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Axle Deadlift",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Back Flyes - With Bands",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Backward Medicine Ball Throw",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Ball Leg Curl",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Band Good Morning",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Band Hip Adductions",
+        "muscleGroup": "Adductors"
+    }, {
+        "exerciseName": "Band Skull Crusher",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Barbell Ab Rollout - On Knees",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Barbell Bench Press-Wide Grip",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Barbell Curls Lying Against An Incline",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Barbell Full Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Barbell Guillotine Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Barbell Hip Thrust",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Barbell Incline Bench Press Medium-Grip",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Barbell Lunge",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Barbell Rollout from Bench",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Barbell Shoulder Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Barbell Shrug Behind The Back",
+        "muscleGroup": "Traps"
+    }, {
+        "exerciseName": "Barbell Side Split Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Barbell Squat To A Bench",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Barbell Walking Lunge",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Bear Crawl Sled Drags",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Bench Dips",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Bench Press - Powerlifting",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Bench Press with Chains",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Bench Sprint",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Bent Over Dumbbell Rear Delt Raise With Head On Bench",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Bent Over One-Arm Long Bar Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Bent Over Two-Dumbbell Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Bent Press",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Bent-Arm Dumbbell Pullover",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Bicycling",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Board Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Body-Up",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Bodyweight Mid Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Bodyweight Walking Lunge",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Bottoms Up",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Box Jump (Multiple Response)",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Box Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Box Squat with Chains",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Bradford/Rocky Presses",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Butt Kicks",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Butt-Ups",
+        "muscleGroup": "Abdominals"
     },
+
     {
-        "exerciseName": " Adductor ",
-        "muscleGroup": " Adductors "
+        "exerciseName": "Cable Chest Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Cable Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Cable Hammer Curls - Rope Attachment",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Cable Incline Pushdown",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Cable Internal Rotation",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Cable Judo Flip",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Cable One Arm Tricep Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Cable Rear Delt Fly",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Cable Rope Overhead Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Cable Russian Twists",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Cable Seated Lateral Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Cable Shrugs",
+        "muscleGroup": "Traps"
+    }, {
+        "exerciseName": "Cable Wrist Curl",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Calf Press On The Leg Press Machine",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Calf Raises - With Bands",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Calf Stretch Hands Against Wall",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Calves-SMR",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Car Drivers",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Cat Stretch",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Chain Handle Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Chair Leg Extended Stretch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Chair Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Chest And Front Of Shoulder Stretch",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Chest Push (single response)",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Chest Push with Run Release",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Child's Pose",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Chin-Up",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Clam",
+        "muscleGroup": "Abductors"
+    }, {
+        "exerciseName": "Clean and Jerk",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Clean Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Clean Pull",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Clock Push-Up",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Close-Grip Dumbbell Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Close-Grip EZ-Bar Curl with Band",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Close-Grip Front Lat Pulldown",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Close-Grip Standing Barbell Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Cocoons",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Concentration Curls",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Cross Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Cross-Body Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Crucifix",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Crunch - Legs On Exercise Ball",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Cuban Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Dancer's Stretch",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Deadlift with Bands",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Decline Barbell Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Decline Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Decline Dumbbell Flyes",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Decline EZ Bar Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Decline Push-Up",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Decline Smith Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Deficit Deadlift",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Dip Machine",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Dips - Triceps Version",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Double Kettlebell Alternating Hang Clean",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Double Kettlebell Push Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Double Kettlebell Windmill",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Downward Facing Balance",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Drop Push",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Dumbbell Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Dumbbell Bicep Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Dumbbell Floor Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Dumbbell Incline Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Dumbbell Lunges",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Dumbbell Lying Pronation",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Dumbbell Lying Supination",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Dumbbell One-Arm Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Dumbbell Prone Incline Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Dumbbell Rear Lunge",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Dumbbell Seated Box Jump",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Dumbbell Shoulder Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Dumbbell Side Bend",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Dumbbell Squat To A Bench",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Dumbbell Tricep Extension -Pronated Grip",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Dynamic Chest Stretch",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Elbow Circles",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Elbows Back",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Elevated Cable Rows",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Exercise Ball Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Extended Range One-Arm Kettlebell Floor Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "External Rotation with Band",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "EZ-Bar Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Face Pull",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Fast Kick With Arm Circles",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Feet Jack",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Fire Hydrant",
+        "muscleGroup": "Abductors"
+    }, {
+        "exerciseName": "Flat Bench Leg Pull-In",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Flexor Incline Dumbbell Curls",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Floor Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Flutter Kicks",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Football Up-Down",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Frankenstein Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Frog Hops",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Front Barbell Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Front Box Jump",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Front Cone Hops (or hurdle hops)",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Front Incline Dumbbell Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Front Plate Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Front Squat (Clean Grip)",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Front Two-Dumbbell Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Full Range-Of-Motion Lat Pulldown",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Gironda Sternum Chins",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Glute Ham Raise",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Goblet Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Good Morning off Pins",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Groin and Back Stretch",
+        "muscleGroup": "Adductors"
+    }, {
+        "exerciseName": "Hack Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Hammer Grip Incline DB Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Hamstring-SMR",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Hang Clean",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Hang Snatch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Hanging Bar Good Morning",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Hanging Oblique Knee Raise",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Heaving Snatch Balance",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "High Cable Curls",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Hip Circles (prone)",
+        "muscleGroup": "Abductors"
+    }, {
+        "exerciseName": "Hip Extension with Bands",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Hip Lift with Band",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Hug Knees To Chest",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Hyperextensions (Back Extensions)",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Iliotibial Tract-SMR",
+        "muscleGroup": "Abductors"
+    }, {
+        "exerciseName": "Incline Barbell Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Incline Cable Chest Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Incline Dumbbell Bench With Palms Facing In",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Incline Dumbbell Flyes",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Incline Dumbbell Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Incline Hammer Curls",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Incline Push-Up",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Incline Push-Up Depth Jump",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Incline Push-Up Reverse Grip",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Intermediate Groin Stretch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Internal Rotation with Band",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Inverted Row with Straps",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Iron Crosses (stretch)",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Isometric Neck Exercise - Front And Back",
+        "muscleGroup": "Neck"
+    }, {
+        "exerciseName": "Isometric Wipers",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Jackknife Sit-Up",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Jefferson Squats",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Jerk Dip Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "JM Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Jog In Place",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Jump Lunge To Feet Jack",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Jumping Jacks",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Keg Load",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Kettlebell Dead Clean",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Kettlebell Hang Clean",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Kettlebell Pass Between The Legs",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Kettlebell Pistol Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Kettlebell Seesaw Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Kettlebell Thruster",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Kettlebell Turkish Get-Up (Squat style)",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Kipping Muscle Up",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Knee Circles",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Knee/Hip Raise On Parallel Bars",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Kneeling Cable Crunch With Alternating Oblique Twists",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Kneeling Forearm Stretch",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Kneeling Hip Flexor",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Kneeling Single-Arm High Pulley Row",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Landmine 180's",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Lateral Bound",
+        "muscleGroup": "Adductors"
+    }, {
+        "exerciseName": "Lateral Cone Hops",
+        "muscleGroup": "Adductors"
+    }, {
+        "exerciseName": "Lateral Speed Step",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Leg Extensions",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Leg Press",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Leg-Over Floor Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Leverage Chest Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Leverage Decline Chest Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Leverage Incline Chest Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Leverage Shoulder Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Linear 3-Part Start Technique",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Linear Depth Jump",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "London Bridges",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Low Cable Crossover",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Low Pulley Row To Neck",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Lower Back-SMR",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Lunge Sprint",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Lying Cable Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Lying Close-Grip Bar Curl On High Pulley",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Lying Close-Grip Barbell Triceps Press To Chin",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Lying Dumbbell Tricep Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Lying Face Up Plate Neck Resistance",
+        "muscleGroup": "Neck"
+    }, {
+        "exerciseName": "Lying Hamstring",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Lying Leg Curls",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Lying One-Arm Lateral Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Lying Rear Delt Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Lying T-Bar Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Machine Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Machine Lateral Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Machine Shoulder (Military) Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Machine Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Medicine Ball Full Twist",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Middle Back Shrug",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Mixed Grip Chin",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Mountain Climbers",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Muscle Snatch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Narrow Stance Hack Squats",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Narrow Stance Squats",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Neck Bridge Supine",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Neck-SMR",
+        "muscleGroup": "Neck"
+    }, {
+        "exerciseName": "Oblique Cable Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Oblique Crunches - On The Floor",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "On Your Side Quad Stretch",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "One Arm Against Wall",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "One Arm Dumbbell Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "One Arm Floor Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "One Arm Pronated Dumbbell Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "One Half Locust",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "One Knee To Chest",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "One-Arm Dumbbell Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "One-Arm High-Pulley Cable Side Bends",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "One-Arm Kettlebell Clean",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "One-Arm Kettlebell Floor Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "One-Arm Kettlebell Military Press To The Side",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "One-Arm Kettlebell Push Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "One-Arm Kettlebell Snatch",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "One-Arm Kettlebell Split Snatch",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "One-Arm Long Bar Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "One-Arm Open Palm Kettlebell Clean",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "One-Arm Side Deadlift",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "One-Legged Cable Kickback",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Otis-Up",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Overhead Lat",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Overhead Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Overhead Triceps",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Pallof Press",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Palms-Down Dumbbell Wrist Curl Over A Bench",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Palms-Up Barbell Wrist Curl Over A Bench",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Parallel Bar Dip",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Peroneals Stretch",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Physioball Hip Bridge",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Piriformis-SMR",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Plank with Twist",
+        "muscleGroup": ""
+    }, {
+        "exerciseName": "Plate Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Platform Hamstring Slides",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Plyo Kettlebell Pushups",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Posterior Tibialis Stretch",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Power Clean from Blocks",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Power Partials",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Power Snatch from Blocks",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Preacher Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Press Sit-Up",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Prowler Sprint",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Pullups",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Push Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Push Up to Side Plank",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Push-Ups - Close Triceps Position",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Push-Ups With Feet On An Exercise Ball",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Pushups (Close and Wide Hand Positions)",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Quad Stretch",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Quick Leap",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Rack Delivery",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Rack Pulls",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Recumbent Bike",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Reverse Band Bench Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Reverse Band Deadlift",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Reverse Band Sumo Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Reverse Barbell Preacher Curls",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Reverse Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Reverse Flyes With External Rotation",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Reverse Grip Triceps Pushdown",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Reverse Machine Flyes",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Reverse Triceps Bench Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Rickshaw Carry",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Ring Dips",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Rocket Jump",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Rocky Pull-Ups/Pulldowns",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Romanian Deadlift from Deficit",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Rope Climb",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Rope Jumping",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Round The World Shoulder Stretch",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Runner's Stretch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Russian Twist",
+        "muscleGroup": "Abdominals"
     },
+
     {
-        "exerciseName": " Advanced Kettlebell Windmill ",
-        "muscleGroup": " Abdominals "
-    },
-    {
-        "exerciseName": " All Fours Quad Stretch ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Alternate Heel Touchers ",
-        "muscleGroup": " Abdominals "
-    },
-    {
-        "exerciseName": " Alternate Leg Diagonal Bound ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Alternating Deltoid Raise ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Alternating Hang Clean ",
-        "muscleGroup": " Hamstrings "
-    },
-    {
-        "exerciseName": " Alternating Kettlebell Row ",
-        "muscleGroup": " Middle Back "
-    },
-    {
-        "exerciseName": " Ankle Circles ",
-        "muscleGroup": " Calves "
-    },
-    {
-        "exerciseName": " Anterior Tibialis-SMR ",
-        "muscleGroup": " Calves "
-    },
-    {
-        "exerciseName": " Arm Circles ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Around The Worlds ",
-        "muscleGroup": " Chest "
-    },
-    {
-        "exerciseName": " Atlas Stones ",
-        "muscleGroup": " Lower Back "
-    },
-    {
-        "exerciseName": " Axle Deadlift ",
-        "muscleGroup": " Lower Back "
-    },
-    {
-        "exerciseName": " Back Flyes - With Bands ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Backward Medicine Ball Throw ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Ball Leg Curl ",
-        "muscleGroup": " Hamstrings "
-    },
-    {
-        "exerciseName": " Band Good Morning ",
-        "muscleGroup": " Hamstrings "
-    },
-    {
-        "exerciseName": " Band Hip Adductions ",
-        "muscleGroup": " Adductors "
-    },
-    {
-        "exerciseName": " Band Skull Crusher ",
-        "muscleGroup": " Triceps "
-    },
-    {
-        "exerciseName": " Barbell Ab Rollout - On Knees ",
-        "muscleGroup": " Abdominals "
-    },
-    {
-        "exerciseName": " Barbell Bench Press-Wide Grip ",
-        "muscleGroup": " Chest "
-    },
-    {
-        "exerciseName": " Barbell Curls Lying Against An Incline ",
-        "muscleGroup": " Biceps "
-    },
-    {
-        "exerciseName": " Barbell Full Squat ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Barbell Guillotine Bench Press ",
-        "muscleGroup": " Chest "
-    },
-    {
-        "exerciseName": " Barbell Hip Thrust ",
-        "muscleGroup": " Glutes "
-    },
-    {
-        "exerciseName": " Barbell Incline Bench Press Medium-Grip ",
-        "muscleGroup": " Chest "
-    },
-    {
-        "exerciseName": " Barbell Lunge ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Barbell Rollout from Bench ",
-        "muscleGroup": " Abdominals "
-    },
-    {
-        "exerciseName": " Barbell Shoulder Press ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Barbell Shrug Behind The Back ",
-        "muscleGroup": " Traps "
-    },
-    {
-        "exerciseName": " Barbell Side Split Squat ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Barbell Squat To A Bench ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Barbell Walking Lunge ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Bear Crawl Sled Drags  ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Bench Dips ",
-        "muscleGroup": " Triceps "
-    },
-    {
-        "exerciseName": " Bench Press - Powerlifting ",
-        "muscleGroup": " Triceps "
-    },
-    {
-        "exerciseName": " Bench Press with Chains ",
-        "muscleGroup": " Triceps "
-    },
-    {
-        "exerciseName": " Bench Sprint ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Bent Over Dumbbell Rear Delt Raise With Head On Bench ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Bent Over One-Arm Long Bar Row ",
-        "muscleGroup": " Middle Back "
-    },
-    {
-        "exerciseName": " Bent Over Two-Dumbbell Row ",
-        "muscleGroup": " Middle Back "
-    },
-    {
-        "exerciseName": " Bent Press ",
-        "muscleGroup": " Abdominals "
-    },
-    {
-        "exerciseName": " Bent-Arm Dumbbell Pullover ",
-        "muscleGroup": " Chest "
-    },
-    {
-        "exerciseName": " Bicycling ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Board Press ",
-        "muscleGroup": " Triceps "
-    },
-    {
-        "exerciseName": " Body-Up ",
-        "muscleGroup": " Triceps "
-    },
-    {
-        "exerciseName": " Bodyweight Mid Row ",
-        "muscleGroup": " Middle Back "
-    },
-    {
-        "exerciseName": " Bodyweight Walking Lunge ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Bottoms Up ",
-        "muscleGroup": " Abdominals "
-    },
-    {
-        "exerciseName": " Box Jump (Multiple Response) ",
-        "muscleGroup": " Hamstrings "
-    },
-    {
-        "exerciseName": " Box Squat ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Box Squat with Chains ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Bradford/Rocky Presses ",
-        "muscleGroup": " Shoulders "
-    },
-    {
-        "exerciseName": " Butt Kicks ",
-        "muscleGroup": " Quadriceps "
-    },
-    {
-        "exerciseName": " Butt-Ups ",
-        "muscleGroup": " Abdominals "
+        "exerciseName": "Sandbag Load",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Scissor Kick",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Seated Back Extension",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Seated Barbell Military Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Seated Bent-Over One-Arm Dumbbell Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Seated Bent-Over Two-Arm Dumbbell Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Seated Cable Rows",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Seated Calf Raise",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Seated Close-Grip Concentration Barbell Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Seated Dumbbell Inner Biceps Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Seated Dumbbell Palms-Up Wrist Curl",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Seated Flat Bench Leg Pull-In",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Seated Front Deltoid",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Seated Glute Stretch",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Seated Hamstring",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Seated Head Harness Neck Resistance",
+        "muscleGroup": "Neck"
+    }, {
+        "exerciseName": "Seated Leg Press",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Seated One-arm Cable Pulley Rows",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Seated One-Arm Dumbbell Palms-Up Wrist Curl",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Seated Palm-Up Barbell Wrist Curl",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Seated Scissor Kick",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Seated Triceps Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "See-Saw Press (Alternating Side Press)",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Shoulder Circles",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Shoulder Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Side Bridge",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Side Jackknife",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Side Laterals to Front Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Side Lunge",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Side Neck Stretch",
+        "muscleGroup": "Neck"
+    }, {
+        "exerciseName": "Side to Side Box Shuffle",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Side To Side Push-Up",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Side-Lying Floor Stretch",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Single Dumbbell Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Single Leg Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Single Leg Push-off",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Single-Arm Linear Jammer",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Single-Cone Sprint Drill",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Single-Leg Hop Progression",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Single-Leg Leg Extension",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Sit Squats",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Skating",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Sled Overhead Backward Walk",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Sled Push",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Sled Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Slide Jump Shot",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Smith Incline Shoulder Raise",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Smith Machine Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Smith Machine Calf Raise",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Smith Machine Decline Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Smith Machine Hip Raise",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Smith Machine Leg Press",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Smith Machine Overhead Shoulder Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Smith Machine Reverse Calf Raises",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Smith Machine Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Smith Machine Upright Row",
+        "muscleGroup": "Traps"
+    }, {
+        "exerciseName": "Snatch",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Snatch Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Snatch Pull",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Speed Band Overhead Triceps",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Speed Box Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Spell Caster",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Spider Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Split Clean",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Split Jump",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Split Squat with Dumbbells",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Square Hop",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Squat with Bands",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Squat with Plate Movers",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Staggered Push-Up",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Standing Alternating Dumbbell Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Standing Barbell Press Behind Neck",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Standing Bent-Over Two-Arm Dumbbell Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Standing Biceps Stretch",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Standing Cable Chest Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Standing Cable Wood Chop",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Standing Concentration Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Standing Dumbbell Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Standing Dumbbell Straight-Arm Front Delt Raise Above Head",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Standing Dumbbell Upright Row",
+        "muscleGroup": "Traps"
+    }, {
+        "exerciseName": "Standing Front Barbell Raise Over Head",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Standing Hamstring and Calf Stretch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Standing Hip Flexors",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Standing Lateral Stretch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Standing Long Jump",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Standing Low-Pulley One-Arm Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Standing Olympic Plate Hand Squeeze",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Standing One-Arm Dumbbell Curl Over Incline Bench",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Standing Overhead Barbell Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Standing Palms-In Dumbbell Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Standing Pelvic Tilt",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Standing Soleus And Achilles Stretch",
+        "muscleGroup": "Calves"
+    }, {
+        "exerciseName": "Standing Towel Triceps Extension",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Star Jump",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Step-up with Knee Raise",
+        "muscleGroup": "Glutes"
+    }, {
+        "exerciseName": "Stiff-Legged Barbell Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Stiff-Legged Dumbbell Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Straight Bar Bench Mid Rows",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Straight-Arm Dumbbell Pullover",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Stride Jump Crossover",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Sumo Deadlift",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Sumo Deadlift with Chains",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Superman",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Supine One-Arm Overhead Throw",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Suspended Back Fly",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Suspended Fallout",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Suspended Reverse Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Suspended Split Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "T-Bar Row",
+        "muscleGroup": "Middle Back"
+    }, {
+        "exerciseName": "Tate Press",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Thigh Abductor",
+        "muscleGroup": "Abductors"
+    }, {
+        "exerciseName": "Tire Flip",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Torso Rotation",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Trap Bar Deadlift",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Tricep Side Stretch",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Triceps Pushdown",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Triceps Pushdown - V-Bar Attachment",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Tuck Crunch",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "Two-Arm Kettlebell Clean",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Two-Arm Kettlebell Military Press",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "Underhand Cable Pulldowns",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Upper Back-Leg Grab",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Upright Cable Row",
+        "muscleGroup": "Traps"
+    }, {
+        "exerciseName": "Upward Stretch",
+        "muscleGroup": "Shoulders"
+    }, {
+        "exerciseName": "V-Bar Pulldown",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Vertical Mountain Climber",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Walking High Knees",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Weighted Ball Hyperextension",
+        "muscleGroup": "Lower Back"
+    }, {
+        "exerciseName": "Weighted Bench Dip",
+        "muscleGroup": "Triceps"
+    }, {
+        "exerciseName": "Weighted Jump Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Weighted Sissy Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Weighted Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Wide Stance Barbell Squat",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Wide-Grip Barbell Bench Press",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Wide-Grip Decline Barbell Pullover",
+        "muscleGroup": "Chest"
+    }, {
+        "exerciseName": "Wide-Grip Pulldown Behind The Neck",
+        "muscleGroup": "Lats"
+    }, {
+        "exerciseName": "Wide-Grip Standing Barbell Curl",
+        "muscleGroup": "Biceps"
+    }, {
+        "exerciseName": "Wind Sprints",
+        "muscleGroup": "Abdominals"
+    }, {
+        "exerciseName": "World's Greatest Stretch",
+        "muscleGroup": "Hamstrings"
+    }, {
+        "exerciseName": "Wrist Roller",
+        "muscleGroup": "Forearms"
+    }, {
+        "exerciseName": "Yoke Walk",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Zercher Squats",
+        "muscleGroup": "Quadriceps"
+    }, {
+        "exerciseName": "Zottman Preacher Curl",
+        "muscleGroup": "Biceps"
     }
+
 ]

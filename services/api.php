@@ -277,6 +277,115 @@
 		}
 
 
+		/* 
+
+		Workouts
+
+		*/
+
+		private function workouts(){	
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			$query="SELECT distinct c.workoutNumber, c.workoutName FROM workouts c order by c.workoutNumber desc";
+			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+
+			if($r->num_rows > 0){
+				$result = array();
+
+				$i = 0;
+				
+
+				while($row = $r->fetch_assoc()){
+				
+					$result[] = $row;
+
+
+					if ($row['workoutNumber']) {
+						$workoutNumber = $row['workoutNumber'];
+
+						//echo ' workoutNumber ' . $workoutNumber;
+
+						$exerciseQuery = "SELECT * FROM exercises WHERE workoutNumber = $workoutNumber";
+
+						$rt = $this->mysqli->query($exerciseQuery) or die ($this->mysqli->error.__LINE__);
+
+						if ($rt->num_rows > 0){
+							$j = 0;
+							$exerciseResult = array(); 
+							while($row = $rt->fetch_assoc()){
+
+								$result[$i]['exercises'][] = $row;
+
+								if($row['exercise_id']) {
+									$exercise_id = $row['exercise_id'];
+
+									$exerciseDataQuery = "SELECT * FROM exercise_data WHERE exercise_id = $exercise_id";
+									$red = $this->mysqli->query($exerciseDataQuery) or die ($this->mysqli->error.__LINE__);
+
+									if ($red->num_rows > 0) {
+
+										$exerciseDataResult = array();
+										while($row = $red->fetch_assoc()) {
+											$result[$i]['exercises'][$j]['exercise_data'][] = $row;
+											//echo 'J: ' . $j . ' ' ;
+										}
+									}
+									
+								}
+
+								//echo ' i ' . $i;
+
+								//print_r($result[$i]['exercises'] );
+								//print_r($row);
+
+								$j++; 
+
+							} // while $rt
+						} // if $rt 
+
+					
+
+						else {
+							$result[$i]['exercises'] = array();
+						}
+						
+					}
+
+					//echo $workoutNumber;
+
+
+					$i++;
+					
+				}
+
+				//print_r($data);
+
+				//print_r($result);
+
+				$this->response($this->json($result), 200); // send user details
+			}
+			$this->response('',204);	// If no records "No Content" status
+		} // workouts
+
+
+
+		private function workout(){	
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			$id = (int)$this->_request['id'];
+			if($id > 0){	
+				$query="SELECT * FROM workouts where workoutNumber=$id";
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				if($r->num_rows > 0) {
+					$result = $r->fetch_assoc();	
+					$this->response($this->json($result), 200); // send product details
+				}
+			}
+			$this->response('',204);	// If no records "No Content" status
+		} // product
+
 
 		
 		/*

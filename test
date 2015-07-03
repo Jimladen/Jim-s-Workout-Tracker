@@ -1,0 +1,11 @@
+<?php
+
+$test = array {
+	test : 'test1',
+	test : 'test2'
+}
+
+
+print_r(test);
+
+?>

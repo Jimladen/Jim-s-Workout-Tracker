@@ -1,0 +1,638 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"searchE",
+				"searchExerciseTerm"
+			],
+			[
+				"exer",
+				"exerciseName"
+			],
+			[
+				"exe",
+				"exerciseName"
+			],
+			[
+				"pagination",
+				"paginationFunction"
+			],
+			[
+				"pagn",
+				"paginationFunction"
+			],
+			[
+				"pagin",
+				"paginationFunction"
+			],
+			[
+				"service",
+				"serviceBase"
+			],
+			[
+				"prod",
+				"product"
+			],
+			[
+				"pro",
+				"productID"
+			],
+			[
+				"getP",
+				"getProduct"
+			],
+			[
+				"ser",
+				"services"
+			],
+			[
+				"update",
+				"updateProduct"
+			],
+			[
+				"getCus",
+				"getCustomers"
+			],
+			[
+				"getPro",
+				"getProducts"
+			],
+			[
+				"getCu",
+				"getCustomers"
+			],
+			[
+				"cus",
+				"customers"
+			],
+			[
+				"PRODUC",
+				"products"
+			],
+			[
+				"pr",
+				"productEditCtrl"
+			],
+			[
+				"produc",
+				"productListCtrl"
+			],
+			[
+				"text",
+				"textmirror"
+			],
+			[
+				"a",
+				"auth"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "services/api.php",
+			"settings":
+			{
+				"buffer_size": 10125,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/app.js",
+			"settings":
+			{
+				"buffer_size": 8647,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Jim/Documents/Apps/speaker-contract-2/speaker-contract.sublime-project",
+			"settings":
+			{
+				"buffer_size": 128,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "partials/exercises.html",
+			"settings":
+			{
+				"buffer_size": 1321,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "partials/products.html",
+			"settings":
+			{
+				"buffer_size": 1324,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "partials/edit-product.html",
+			"settings":
+			{
+				"buffer_size": 2371,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "partials/customers.html",
+			"settings":
+			{
+				"buffer_size": 1266,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1091,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "partials/edit-customer.html",
+			"settings":
+			{
+				"buffer_size": 3029,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "exercises.json",
+			"settings":
+			{
+				"buffer_size": 9464,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 167.0,
+		"selected_items":
+		[
+			[
+				"pretti",
+				"HTMLPrettify"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Jim/Documents/node_apps/REST/services/Rest.inc.php",
+		"/Users/Jim/Documents/node_apps/REST/exercises.json",
+		"/Users/Jim/Documents/node_apps/REST/partials/products.html",
+		"/Users/Jim/Documents/node_apps/REST/app/app.js",
+		"/Users/Jim/Documents/node_apps/REST/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
+		"/Users/Jim/Documents/node_apps/REST/bower_components/angular-bootstrap/ui-bootstrap-csp.css",
+		"/Users/Jim/Documents/node_apps/REST/index.html",
+		"/Users/Jim/Documents/Websites/sheentestsite/scss/app.scss",
+		"/Users/Jim/Documents/Websites/sheentestsite/index.html",
+		"/Users/Jim/Documents/Websites/parallax-test/index.html",
+		"/Users/Jim/Documents/Websites/sheentestsite/bower_components/grunt/Gruntfile.js",
+		"/Users/Jim/Documents/Websites/parallax-test/scss/styles.scss",
+		"/Users/Jim/flapper-news/views/index.ejs",
+		"/Users/Jim/flapper-news/public/javascripts/angularApp.js",
+		"/Users/Jim/Documents/Websites/abbvie/assets/30.00/30.00.css",
+		"/Users/Jim/Documents/Websites/abbvie/30.00.html",
+		"/Users/Jim/Documents/Development Stuff/jQuery Plugins/janpaepke-ScrollMagic-8746d01/examples/advanced/parallax_sections.html",
+		"/Users/Jim/Documents/Websites/sheen-digital/package.json",
+		"/Users/Jim/flapper-news-main/flapper-news/app.js",
+		"/Users/Jim/flapper-news-main/flapper-news/views/index.ejs",
+		"/Users/Jim/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Jim/flapper-news-main/flapper-news/public/javascripts/angularApp.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"All,/Users/Jim/Documents/node_apps/REST"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\" ",
+			"numPages",
+			"float",
+			"customer",
+			"Customer",
+			"customer",
+			"		\n",
+			"customer",
+			"Customer",
+			"isClean()",
+			"$dirty",
+			"customer",
+			"Customer",
+			"insertproduct",
+			"customer",
+			"if you have",
+			"customers",
+			"customers\ncustomers\ncustomers",
+			"(p=",
+			"(p=\np=",
+			"(p=\np=0.5",
+			"(p=\np=0.54",
+			"(p=",
+			"$state",
+			"NavCtrl\n",
+			"auth",
+			"Author",
+			"auth",
+			"AuthCtrl"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\"",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "services/api.php",
+					"settings":
+					{
+						"buffer_size": 10125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9896,
+								9896
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 27.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/app.js",
+					"settings":
+					{
+						"buffer_size": 8647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4880,
+								4880
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2124.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Jim/Documents/Apps/speaker-contract-2/speaker-contract.sublime-project",
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "partials/exercises.html",
+					"settings":
+					{
+						"buffer_size": 1321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								636,
+								636
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "partials/products.html",
+					"settings":
+					{
+						"buffer_size": 1324,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1148,
+								1148
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "partials/edit-product.html",
+					"settings":
+					{
+						"buffer_size": 2371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "partials/customers.html",
+					"settings":
+					{
+						"buffer_size": 1266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								623,
+								623
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 1091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "partials/edit-customer.html",
+					"settings":
+					{
+						"buffer_size": 3029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1458,
+								1458
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "exercises.json",
+					"settings":
+					{
+						"buffer_size": 9464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
