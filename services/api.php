@@ -292,7 +292,8 @@
 
 			if($r->num_rows > 0){
 				$result = array();
-
+				$exerciseResult = array();
+						
 				$i = 0;
 				
 
@@ -310,9 +311,12 @@
 
 						$rt = $this->mysqli->query($exerciseQuery) or die ($this->mysqli->error.__LINE__);
 
+
+						$exerciseDataResult = array();
+
 						if ($rt->num_rows > 0){
 							$j = 0;
-							$exerciseResult = array(); 
+							 
 							while($row = $rt->fetch_assoc()){
 
 								$result[$i]['exercises'][] = $row;
@@ -323,13 +327,16 @@
 									$exerciseDataQuery = "SELECT * FROM exercise_data WHERE exercise_id = $exercise_id";
 									$red = $this->mysqli->query($exerciseDataQuery) or die ($this->mysqli->error.__LINE__);
 
+									
 									if ($red->num_rows > 0) {
-
-										$exerciseDataResult = array();
 										while($row = $red->fetch_assoc()) {
 											$result[$i]['exercises'][$j]['exercise_data'][] = $row;
 											//echo 'J: ' . $j . ' ' ;
 										}
+									}
+
+									else {
+										$result[$i]['exercises'][$j]['exercise_data'][] = array();
 									}
 									
 								}
@@ -385,6 +392,97 @@
 			}
 			$this->response('',204);	// If no records "No Content" status
 		} // product
+
+
+
+		private function insertWorkout(){
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$workout = json_decode(file_get_contents("php://input"),true);
+			$column_names = array('workoutName', 'workoutDescription', 'workoutStock');
+			$keys = array_keys($workout);
+			$columns = '';
+			$values = '';
+			foreach($column_names as $desired_key){ // Check the workout received. If blank insert blank into the array.
+			   if(!in_array($desired_key, $keys)) {
+			   		$$desired_key = '';
+				}else{
+					$$desired_key = $workout[$desired_key];
+				}
+				$columns = $columns.$desired_key.',';
+				$values = $values."'".$$desired_key."',";
+			}
+			$query = "INSERT INTO workouts(".trim($columns,',').") VALUES(".trim($values,',').")";
+			if(!empty($workout)){
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$success = array('status' => "Success", "msg" => "Workout Created Successfully.", "data" => $workout);
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	//"No Content" status
+		}
+
+		private function insertExercise(){
+
+
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$exercise = json_decode(file_get_contents("php://input"),true);
+			$column_names = array('exerciseName', 'workoutNumber');
+			$keys = array_keys($exercise);
+			$columns = '';
+			$values = '';
+			foreach($column_names as $desired_key){ // Check the exercise received. If blank insert blank into the array.
+			   if(!in_array($desired_key, $keys)) {
+			   		$$desired_key = '';
+				}else{
+					$$desired_key = $exercise[$desired_key];
+				}
+				$columns = $columns.$desired_key.',';
+				$values = $values."'".$$desired_key."',";
+			}
+			$query = "INSERT INTO exercises(".trim($columns,',').") VALUES(".trim($values,',').")";
+			if(!empty($exercise)){
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$success = array('status' => "Success", "msg" => "Exercise Created Successfully.", "data" => $exercise);
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	//"No Content" status
+		}
+
+
+		private function insertExerciseData(){
+
+
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$exercise = json_decode(file_get_contents("php://input"),true);
+			$column_names = array('exercise_id', 'reps', 'weight');
+			$keys = array_keys($exercise);
+			$columns = '';
+			$values = '';
+			foreach($column_names as $desired_key){ // Check the exercise received. If blank insert blank into the array.
+			   if(!in_array($desired_key, $keys)) {
+			   		$$desired_key = '';
+				}else{
+					$$desired_key = $exercise[$desired_key];
+				}
+				$columns = $columns.$desired_key.',';
+				$values = $values."'".$$desired_key."',";
+			}
+			$query = "INSERT INTO exercise_data(".trim($columns,',').") VALUES(".trim($values,',').")";
+			if(!empty($exercise)){
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$success = array('status' => "Success", "msg" => "Exercise Data Created Successfully.", "data" => $exercise);
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	//"No Content" status
+		}
 
 
 		

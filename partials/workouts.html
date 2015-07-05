@@ -6,29 +6,29 @@
             </div>
         </nav>
         <div ng-repeat="workout in workouts">
-            <h2 ng-click="isOpen = !isOpen"><span class="glyphicon glyphicon-plus" ng-hide="isOpen"></span> 
-                <span class="glyphicon glyphicon-minus" ng-show="isOpen"></span>{{workout.workoutName}} </h2>
-            <div ng-repeat="exercise in workout.exercises" ng-show="isOpen">
+            <h2>{{workout.workoutName}} </h2>
+            <div ng-repeat="exercise in workout.exercises">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h3 ng-click="isOpenEd = !isOpenEd"><span class="glyphicon glyphicon-plus" ng-hide="isOpenEd"></span> <span class="glyphicon glyphicon-minus" ng-show="isOpenEd"></span><span ng-model="exerciseName">{{exercise.exerciseName}}</span> </h3>
+                        <h3><span ng-model="exerciseName">{{exercise.exerciseName}}</span> </h3>
                     </div>
-                    <div class="col-xs-12" ng-show="isOpenEd"> <span>Total Reps: {{exercise.totalReps}} - Total Sets: {{exercise.totalSets}} - 1RM: {{exercise.oneRepMax}}</span></div>
-                    <div class="col-xs-12" ng-repeat="set in exercise.exercise_data" ng-show="isOpenEd">
+                    <div class="col-xs-12"> <span>Total Reps: {{totalReps($parent.$index, $index)}} - Total Sets: {{totalSets($parent.$index, $index)}} - 1RM: {{exercise.oneRepMax}}kg - average Reps :{{exercise.averageReps}} - total weight: {{exercise.totalWeight}}</span></div>
+                    <div class="col-xs-12" ng-repeat="set in exercise.exercise_data" >
                         <p>Set: {{$index + 1}} - Reps: {{set.reps}} - Weight: {{set.weight}}kg</p>
                         <label for="reps">Reps:</label>
-                        <input name="reps" type="number" placeholder="{{set.reps}}">
+                        <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps">
                         <br/>
                         <label for="weight">Weight:</label>
-                        <input name="weight" type="number" placeholder="{{set.weight}}">
+                        <input name="weight" type="number" placeholder="{{set.weight}}" ng-model="set.weight">
+                        <button class="btn btn-success" ng-click="saveExerciseData($parent.$parent.$index, $parent.$index, $index)">Save</button>
                     </div>
-                    <div class="col-xs-12" ng-show="isOpenEd">
+                    <div class="col-xs-12">
                         <a ng-click="addSet($parent.$index, $index)" class="btn btn-primary">Add set</a>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12" ng-show="isOpen">
+                <div class="col-xs-12">
                     <a ng-click="exerciseSelect = !exerciseSelect" class="btn btn-primary">Add exercise</a>
                     <div ng-show="exerciseSelect" ng-controller="exerciseListCtrl">
                         <span ng-bind="exerciseName"></span>
@@ -47,7 +47,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="data in exercises | filter:filters | orderBy: 'exerciseName' | searchExercises:searchExerciseTerm">
-                                    <td><a ng-click="addItem($parent.$index, data.exerciseName)">{{data.exerciseName}}</a></td>
+                                    <td><a ng-click="addItem($parent.$index, data.exerciseName); filters = {} ; exerciseSelect = !exerciseSelect">{{data.exerciseName}}</a></td>
                                     <td><a ng-click="filters.muscleGroup = data.muscleGroup">{{data.muscleGroup}}</a></td>
                                 </tr>
                             </tbody>

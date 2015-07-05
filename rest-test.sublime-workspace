@@ -95,7 +95,7 @@
 			"file": "services/api.php",
 			"settings":
 			{
-				"buffer_size": 10125,
+				"buffer_size": 12629,
 				"line_ending": "Unix"
 			}
 		},
@@ -103,15 +103,7 @@
 			"file": "app/app.js",
 			"settings":
 			{
-				"buffer_size": 8647,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/Jim/Documents/Apps/speaker-contract-2/speaker-contract.sublime-project",
-			"settings":
-			{
-				"buffer_size": 128,
+				"buffer_size": 19632,
 				"line_ending": "Unix"
 			}
 		},
@@ -119,7 +111,7 @@
 			"file": "partials/exercises.html",
 			"settings":
 			{
-				"buffer_size": 1321,
+				"buffer_size": 1651,
 				"line_ending": "Unix"
 			}
 		},
@@ -151,7 +143,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1091,
+				"buffer_size": 1293,
 				"line_ending": "Windows"
 			}
 		},
@@ -167,7 +159,7 @@
 			"file": "exercises.json",
 			"settings":
 			{
-				"buffer_size": 9464,
+				"buffer_size": 43960,
 				"line_ending": "Unix"
 			}
 		}
@@ -200,6 +192,7 @@
 	},
 	"file_history":
 	[
+		"/Users/Jim/Documents/Apps/speaker-contract-2/speaker-contract.sublime-project",
 		"/Users/Jim/Documents/node_apps/REST/services/Rest.inc.php",
 		"/Users/Jim/Documents/node_apps/REST/exercises.json",
 		"/Users/Jim/Documents/node_apps/REST/partials/products.html",
@@ -294,7 +287,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -302,15 +295,15 @@
 					"file": "services/api.php",
 					"settings":
 					{
-						"buffer_size": 10125,
+						"buffer_size": 12629,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9896,
-								9896
+								420,
+								420
 							]
 						],
 						"settings":
@@ -318,8 +311,8 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 27.0,
-						"translation.y": 0.0,
+						"translation.x": 30.0,
+						"translation.y": 4796.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -329,35 +322,7 @@
 					"file": "app/app.js",
 					"settings":
 					{
-						"buffer_size": 8647,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4880,
-								4880
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2124.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/Jim/Documents/Apps/speaker-contract-2/speaker-contract.sublime-project",
-					"settings":
-					{
-						"buffer_size": 128,
+						"buffer_size": 19632,
 						"regions":
 						{
 						},
@@ -370,28 +335,30 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6231.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "partials/exercises.html",
 					"settings":
 					{
-						"buffer_size": 1321,
+						"buffer_size": 1651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								636,
-								636
+								0,
+								0
 							]
 						],
 						"settings":
@@ -407,7 +374,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "partials/products.html",
 					"settings":
 					{
@@ -435,7 +402,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "partials/edit-product.html",
 					"settings":
 					{
@@ -463,7 +430,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "partials/customers.html",
 					"settings":
 					{
@@ -491,11 +458,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1091,
+						"buffer_size": 1293,
 						"regions":
 						{
 						},
@@ -519,7 +486,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "partials/edit-customer.html",
 					"settings":
 					{
@@ -547,19 +514,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "exercises.json",
 					"settings":
 					{
-						"buffer_size": 9464,
+						"buffer_size": 43960,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								173,
-								173
+								0,
+								0
 							]
 						],
 						"settings":
