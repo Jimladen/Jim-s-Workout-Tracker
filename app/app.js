@@ -128,8 +128,8 @@ app.factory("services", ['$http', function($http)
       console.log(serviceBase + 'insertExerciseData', exerciseData);
         return $http.post(serviceBase + 'insertExerciseData', exerciseData).then(function(results)
         {
-            return results;
             console.log(results);
+            return results;
         });
     };
 
@@ -519,7 +519,7 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
 
                                          
                                          
-                                            
+
                                             // var obj4 = obj3[property2];
 
                                             // for (var property2 in obj4)
@@ -610,7 +610,13 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
        console.log(index);
          var exercise_id = $scope.workouts[topIndex].exercises[parentIndex].exercise_id;
          $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].exercise_id = exercise_id;
-         services.insertExerciseData($scope.workouts[topIndex].exercises[parentIndex].exercise_data[index]);
+
+         services.insertExerciseData($scope.workouts[topIndex].exercises[parentIndex].exercise_data[index]).then(function(results){
+            console.log(results);
+            var unique_id = results.data.unique_id;
+            console.log(unique_id)
+           // $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].set_id = unique_id;
+         });
     }
 
     $scope.addItem = function(index, newExerciseName)
@@ -653,7 +659,7 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
         $scope.workouts[parentIndex].exercises[index].exercise_data.push(
         {
             reps: '20',
-            set_id: workout_id
+            set_id: '0'
         });
 
 

@@ -447,6 +447,7 @@
 			$query = "INSERT INTO exercises(".trim($columns,',').") VALUES(".trim($values,',').")";
 			if(!empty($exercise)){
 				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				
 				$success = array('status' => "Success", "msg" => "Exercise Created Successfully.", "data" => $exercise);
 				$this->response($this->json($success),200);
 			}else
@@ -478,7 +479,8 @@
 			$query = "INSERT INTO exercise_data(".trim($columns,',').") VALUES(".trim($values,',').")";
 			if(!empty($exercise)){
 				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
-				$success = array('status' => "Success", "msg" => "Exercise Data Created Successfully.", "data" => $exercise);
+				$unique_id = $this->mysqli->insert_id;
+				$success = array('status' => "Success", "msg" => "Exercise Data Created Successfully.", "data" => $exercise, "unique_id" => $unique_id);
 				$this->response($this->json($success),200);
 			}else
 				$this->response('',204);	//"No Content" status
