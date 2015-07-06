@@ -400,7 +400,6 @@ app.controller('exerciseListCtrl', function($scope, services, $log)
 app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function($scope, $controller, services, $log)
 {
 
-
     services.getWorkouts().then(function(data)
         {
             $scope.workouts = data.data;
@@ -423,173 +422,7 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
             var averageWeight = 0;
             var averageReps = 0;
 
-            for (var key in data.data)
-            {
-                if (data.data.hasOwnProperty(key))
-                {
-                    var obj = data.data[key];
-                    // console.log(obj);
-                    for (var prop in obj)
-                    {
-                        // important check that this is objects own property 
-                        // not from prototype prop inherited
-                        if (obj.hasOwnProperty(prop))
-                        {
-                            if (prop == 'exercises')
-                            {
-                                // console.log(obj['exercises']);
-
-                                var obj2 = obj['exercises'];
-
-                                for (var property in obj2)
-                                {
-
-                                    //console.log(innerCount);
-                                    $scope.exerciseTest[innerCount] = obj2[property];
-                                    $scope.exerciseTest[innerCount] = obj2['onerm'];
-
-                                    //console.log( $scope.exerciseTest[innerCount]);
-                                    //console.log(obj2[property]);
-                                    innerCount++;
-
-
-
-
-                                    var obj3 = obj2[property];
-
-                                    for (var property2 in obj3)
-                                    {
-                                        var totalReps = 0;
-                                        var totalSets = 0;
-                                        var totalWeight = 0;
-
-
-                                        //console.log(obj3);
-                                        //console.log(property2 + obj3[property2]);
-
-
-                                         console.log(property2)
-
-                                        if (property2 == 'exercise_data')
-                                        {
-
-                                            var obj4 = obj3[property2];
-
-                                            for (var property2 in obj4)
-                                            {
-                                                // console.log(obj4[property2]);
-
-
-
-                                                var reps = obj4[property2]['reps'];
-                                                totalReps += parseInt(reps);
-
-
-                                                //console.log(property2.length);
-                                                var sets = obj4[property2]['sets'];
-                                                totalSets += property2.length;
-
-                                                var averageReps = totalReps / totalSets;
-
-
-                                                var weight = obj4[property2]['weight'];
-                                                totalWeight += parseInt(weight);
-
-                                                var averageWeight = totalWeight / totalSets;
-
-                                                var oneRepMax = parseInt(averageWeight / (1.0278 - (0.0278 * averageReps)));
-
-                                                //console.log(oneRm);
-
-                                                //console.log($scope.exerciseTest[innerCount] = obj2[property]);
-
-                                                $scope.exercise_data[innerCount1] = obj4[property2];
-
-                                                innerCount1++;
-
-
-                                            }
-
-                                            // console.log(obj3['exercise_data']);
-                                            // $scope.exercise_data[innerCount1] = obj3[property2];
-                                            // innerCount1++;
-                                        }
-
-                                        else {
-
-                                         
-                                         
-
-                                            // var obj4 = obj3[property2];
-
-                                            // for (var property2 in obj4)
-                                            // {
-                                            //     // console.log(obj4[property2]);
-
-
-
-                                            //     var reps = obj4[property2]['reps'];
-                                            //     totalReps += parseInt(reps);
-
-
-                                            //     //console.log(property2.length);
-                                            //     var sets = obj4[property2]['sets'];
-                                            //     totalSets += property2.length;
-
-                                            //     var averageReps = totalReps / totalSets;
-
-
-                                            //     var weight = obj4[property2]['weight'];
-                                            //     totalWeight += parseInt(weight);
-
-                                            //     var averageWeight = totalWeight / totalSets;
-
-                                            //     var oneRepMax = parseInt(averageWeight / (1.0278 - (0.0278 * averageReps)));
-
-                                            //     //console.log(oneRm);
-
-                                            //     //console.log($scope.exerciseTest[innerCount] = obj2[property]);
-
-                                            //     $scope.exercise_data[innerCount1] = obj4[property2];
-
-                                            //     innerCount1++;
-                                            //   }
-                                            
-
-                                            // console.log(obj3['exercise_data']);
-                                            // $scope.exercise_data[innerCount1] = obj3[property2];
-                                            // innerCount1++;
-                                        
-
-                                        }
-
-
-
-                                        obj3['totalReps'] = totalReps;
-                                        obj3['totalSets'] = totalSets;
-                                        obj3['averageReps'] = averageReps;
-                                        obj3['totalWeight'] = totalWeight;
-                                        obj3['averageWeight'] = averageWeight;
-                                        obj3['oneRepMax'] = oneRepMax;
-
-
-                                    }
-
-
-
-
-                                }
-
-                            }
-                        }
-                    }
-                }
-                count++;
-            }
-
-
-
-           
+            
             // console.log($scope.exerciseTest);
 
 
@@ -699,6 +532,7 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
       // $scope.averageReps(parentIndex,index);
 
         var getAverageReps = total / $scope.workouts[parentIndex].exercises[index].exercise_data.length;
+        getAverageReps = getAverageReps.toFixed(0);
         // console.log(getAverageReps);
         $scope.workouts[parentIndex].exercises[index].averageReps = getAverageReps;
 
