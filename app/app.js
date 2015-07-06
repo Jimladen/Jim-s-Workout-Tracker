@@ -536,7 +536,7 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
     }
 
     $scope.deleteSet = function(topIndex, parentIndex, index) {
-
+        
     }
 
 
