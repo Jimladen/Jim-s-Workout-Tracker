@@ -1,0 +1,254 @@
+
+$lightgrey: #F8F8F8;
+$grey : #dadada;
+$lightblue: #DFF7FE;
+$lightpink: #FAFCFF;
+$darkgrey: #434343;
+
+
+
+@mixin whiteSpace {
+       white-space: pre-wrap; /* css-3 */    
+       white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+       white-space: -pre-wrap; /* Opera 4-6 */    
+       white-space: -o-pre-wrap; /* Opera 7 */    
+       word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+body a {
+    @include whiteSpace
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin placeholder {
+	
+	&::-webkit-input-placeholder {
+	  @content;
+	}
+	
+	&:-moz-placeholder { /* Firefox 18- */
+	  @content;
+	}
+	
+	&::-moz-placeholder {  /* Firefox 19+ */
+	  @content;
+	}
+	
+	&:-ms-input-placeholder {  
+	  @content;
+	}
+		
+}
+
+
+$oxygenFont : 'Oxygen', sans-serif;
+$sourceSansFont : 'Source Sans Pro', sans-serif;
+
+@mixin sourceSans($fontSize:"") {
+	font-family: $sourceSansFont;
+	font-weight:400;
+	font-size: unquote($fontSize);
+}
+
+
+@mixin sourceSansSemiBoldItalic($fontSize:"") {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:600;
+	font-style:italic;
+	font-size: unquote($fontSize);
+}
+
+@mixin oxygenLight($fontSize:"") {
+	font-family: $oxygenFont;
+	font-weight:300;
+	font-size:$fontSize;
+}
+
+
+
+$mobilePortrait: 480px;
+$mobileLandscape: 768px;
+$tablet : 1024px;
+$desktop : 1024px;
+
+
+@mixin desktop {
+	@media (min-width: #{desktop}) {
+		@content;	
+	}
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+
+
+@mixin mobileLandscape {
+  @media (max-width: #{$mobileLandscape}) {
+    @content;
+  }
+}
+
+@mixin mobilePortrait {
+  @media (max-width: #{$mobilePortrait}) {
+    @content;
+  }
+}
+
+@mixin iphone4 {
+	@media (max-width: #{$mobilePortrait}) and (max-height:480px) {
+		@content;
+	}
+}
+
+@mixin iphone5 {
+	@media (max-width: #{$mobilePortrait}) and (max-height:568px) {
+		@content;
+	}
+}
+
+@mixin iphone6 {
+	@media (max-width: #{$mobilePortrait}) and (max-height:736px) {
+		@content;
+	}
+}
+
+
+
+
+
+
+body {
+	color:$darkgrey;
+	width: 100%;
+  	overflow-x: hidden;
+}
+
+
+input {
+	&:focus {
+		outline:0;
+	}
+}
+.paddingAll {
+	padding:20px 0;
+}
+.workoutName {
+	background: $lightgrey;
+	border:1px solid $grey;
+
+	input {
+	  background: none;
+	  border: 0;
+	  width: 100%;
+	  padding:0;
+	  margin:0;
+	}
+
+	&.active {
+		.glyphicon-chevron-right {
+			@include transform(rotate(90deg));
+			@include transition(all, 0.2s, linear);
+		}
+	}
+	.glyphicon-chevron-right {
+		@include transition(all, 0.2s, linear);
+		display:block;
+		width:13px;
+	}
+}
+
+
+.showExercise {
+	 -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+	opacity:1;
+	-webkit-opacity:1;
+
+	&.enter {
+		@include transition(all,1s, linear);
+		opacity:1;
+	}
+
+	&.ng-hide-add {
+		opacity:1;
+		display:block;
+		@include transition(all,1s,linear);
+	}
+
+	&.ng-hide-add-active {
+		opacity:0;
+		-webkit-opacity:0;
+		@include transition(all, 1s, linear);
+	}
+
+	&.ng-hide {
+		opacity:0;
+		-webkit-opacity:0;
+		-webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+	}
+}
+
+
+.row.exercises {
+	
+	background:$lightblue;
+	opacity:1;
+	-webkit-opacity:1;
+	@include transition(all, 0.2s, linear);
+
+	paddingAll {
+		padding:20px 0;
+	}
+
+	&.ng-hide {
+		opacity:0;
+		-webkit-opacity:0;
+		@include transition(all, 0.2s, linear);
+	}
+
+
+	
+
+}
+
+.row.sets {
+	background: $lightpink;
+	text-align:center;
+
+	input {
+		background: none;
+	  border: 0;
+	  width: 100%;
+	  padding:0;
+	  margin:0;
+	  text-align:center;
+	}
+
+	&.ng-hide {
+		@include transition(all,1s, linear);
+		opacity:0;
+	}
+
+
+}
