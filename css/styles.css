@@ -36,11 +36,11 @@ input:focus {
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
+    -webkit-transition: all 0.2s "linear";
+    -moz-transition: all 0.2s "linear";
+    -ms-transition: all 0.2s "linear";
+    -o-transition: all 0.2s "linear";
+    transition: all 0.2s "linear"; }
   .workoutName .glyphicon-chevron-right {
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
@@ -51,38 +51,23 @@ input:focus {
     width: 13px; }
 
 .showExercise {
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  opacity: 1;
-  -webkit-opacity: 1; }
-  .showExercise.enter {
-    -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    -ms-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
-    opacity: 1; }
-  .showExercise.ng-hide-add {
-    opacity: 1;
-    display: block;
-    -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    -ms-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear; }
-  .showExercise.ng-hide-add-active {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    -ms-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear; }
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  height: 100%;
+  display: block !important;
+  opacity: 1; }
   .showExercise.ng-hide {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    height: 0;
     opacity: 0;
-    -webkit-opacity: 0;
-    -webkit-transition: all 0.5s linear;
-    transition: all 0.5s linear; }
+    display: none !important; }
 
 .row.exercises {
   background: #DFF7FE;
@@ -103,10 +88,52 @@ input:focus {
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear; }
+  .row.exercises.active .glyphicon-chevron-right {
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
+  .row.exercises .glyphicon-chevron-right {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    display: block;
+    width: 13px; }
+  .row.exercises .exerciseSelect {
+    margin-top: 20px; }
+    .row.exercises .exerciseSelect input {
+      border: 0;
+      outline: 0;
+      background: none;
+      border-bottom: 1px solid #434343;
+      box-shadow: 0 0 0;
+      -webkit-box-shadow: 0 0 0;
+      -moz-box-shadow: 0 0 0;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0; }
+    .row.exercises .exerciseSelect .showMuscleFilters {
+      padding: 20px 0;
+      text-align: left;
+      display: block; }
 
 .row.sets {
   background: #FAFCFF;
-  text-align: center; }
+  text-align: center;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  height: 100%; }
   .row.sets input {
     background: none;
     border: 0;
@@ -115,11 +142,13 @@ input:focus {
     margin: 0;
     text-align: center; }
   .row.sets.ng-hide {
-    -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    -ms-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
-    opacity: 0; }
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    height: 0;
+    opacity: 0;
+    display: none; }
 
 /*# sourceMappingURL=styles.css.map */

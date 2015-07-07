@@ -19,7 +19,7 @@ body a {
     @include whiteSpace
 }
 
-@mixin transition($transition-property, $transition-time, $method) {
+@mixin transition($transition-property, $transition-time, $method:"linear") {
     -webkit-transition: $transition-property $transition-time $method;
     -moz-transition: $transition-property $transition-time $method;
     -ms-transition: $transition-property $transition-time $method;
@@ -35,6 +35,15 @@ body a {
 	-webkit-transform: $transforms;
           transform: $transforms;
 }
+
+
+@mixin borderRadius($content) {
+	border-radius:$content;
+	-webkit-border-radius:$content;
+	-moz-border-radius:$content;
+}
+
+
 
 @mixin placeholder {
 	
@@ -167,7 +176,7 @@ input {
 	&.active {
 		.glyphicon-chevron-right {
 			@include transform(rotate(90deg));
-			@include transition(all, 0.2s, linear);
+			@include transition(all, 0.2s);
 		}
 	}
 	.glyphicon-chevron-right {
@@ -179,34 +188,22 @@ input {
 
 
 .showExercise {
-	 -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-	opacity:1;
-	-webkit-opacity:1;
-
-	&.enter {
-		@include transition(all,1s, linear);
-		opacity:1;
-	}
-
-	&.ng-hide-add {
-		opacity:1;
-		display:block;
-		@include transition(all,1s,linear);
-	}
-
-	&.ng-hide-add-active {
-		opacity:0;
-		-webkit-opacity:0;
-		@include transition(all, 1s, linear);
-	}
+	@include transition(all, 0.2s, linear);
+	
+	height:100%;
+	display:block!important;
+	opacity:1; 
 
 	&.ng-hide {
+		
+		@include transition(all, 0.2s, linear);
+		height:0;
 		opacity:0;
-		-webkit-opacity:0;
-		-webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+		display:none!important;
 	}
+
+
+
 }
 
 
@@ -227,7 +224,43 @@ input {
 		@include transition(all, 0.2s, linear);
 	}
 
+		&.active {
+		.glyphicon-chevron-right {
+			@include transform(rotate(90deg));
+			@include transition(all, 0.2s, linear);
+		}
+	}
+	.glyphicon-chevron-right {
+		@include transition(all, 0.2s, linear);
+		display:block;
+		width:13px;
+	}
 
+	.exerciseSelect {
+		margin-top:20px;
+
+		input {
+			border:0;
+			outline:0;
+			background:none;
+			border-bottom:1px solid $darkgrey;
+			box-shadow:0 0 0;
+			-webkit-box-shadow: 0 0 0;
+			-moz-box-shadow: 0 0 0; 
+
+			@include borderRadius(0);
+		}
+
+		.showMuscleFilters {
+			padding:20px 0;
+			text-align:left;
+			display:block;
+		}
+
+		.muscleGroupFilters {
+			
+		}
+	}
 	
 
 }
@@ -245,9 +278,17 @@ input {
 	  text-align:center;
 	}
 
+	@include transition(all, 0.2s, linear);
+	
+	height:100%;
+	
+
 	&.ng-hide {
-		@include transition(all,1s, linear);
+		
+		@include transition(all, 0.2s, linear);
+		height:0;
 		opacity:0;
+		display:none;
 	}
 
 

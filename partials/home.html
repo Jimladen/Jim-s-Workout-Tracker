@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row title">
+            <div class="col-xs-12">
+                <p>Workouts</p>
+            </div>
+        </div>
+        <div ng-repeat="workout in workouts">
+            <div class="row workoutName" ng-class="{'active' : showExercise == true}"  >
+                <div class="paddingAll">
+                        <div class="col-xs-10">
+                            <a href="#/start-workout/{{workout.workoutNumber}}"><p ng-model="workout.workoutName">{{workout.workoutName}}</p></a>
+                        </div>
+                        <div class="col-xs-2" ng-click="showExercise = !showExercise">
+                            <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                </div>
+            </div>
+
+            
+        </div>
+            </div>
+    </div>
+</div>
+<div class="row sets">
+    <div class="paddingAll">
+        <div class="col-xs-12">
+            <br>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-12" ng-show="workouts.length == 0">
+    <div class="col-md-12">
+        <h4>No workouts found</h4>
+    </div>
+</div>
+</div>

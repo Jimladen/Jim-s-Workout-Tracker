@@ -2,38 +2,17 @@
     <div class="col-md-12">
         <div class="row title">
             <div class="col-xs-12">
-                <p>Workouts</p>
+                <p>{{workoutName}}</p>
             </div>
         </div>
-        <div ng-repeat="workout in workouts">
-            <div class="row workoutName" ng-class="{'active' : showExercise == true}">
-                <div class="paddingAll">
-                    <form ng-submit="saveWorkoutName($index)">
-                        <div class="col-xs-2">
-                             <span ng-click="deleteWorkoutShow = !deleteWorkoutShow" class="glyphicon glyphicon-minus" ng-hide="deleteWorkoutShow"></span>
-                            <span ng-click="deleteWorkout($index)" class="glyphicon glyphicon-remove" ng-class="deleteClass" ng-show="deleteWorkoutShow"></span>
-                        </div>
-                        <div class="col-xs-8">
-                            <input type="text" placeholder="{{workout.workoutName}}" ng-model="workout.workoutName" ng-blur="saveWorkoutName($index)"></input>
-                        </div>
-                        <div class="col-xs-2" ng-click="showExercise = !showExercise">
-                            <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
-                        </div>
-                        <div class="clearfix visible-xs-block"></div>
-                        <!-- <button ng-click="editName = !editName" ng-hide="editName" class="btn btn-xs btn-primary">Edit</button> -->
-                        <!-- <button ng-click="saveWorkoutName($index); editName = !editName" ng-show="editName" class="btn btn-xs btn-primary">Save</button>
-                            <button ng-click="deleteWorkout($index); editName = !editName" ng-show="editName" class="btn btn-xs btn-danger">Delete</button>
-                            <button ng-click="editName = !editName" ng-show="editName" class="btn btn-xs btn-warning">Cancel</button> -->
-                    </form>
-                </div>
-            </div>
+  
 
-            <div ng-repeat="exercise in workout.exercises" ng-show="showExercise" class="showExercise">
-                <div class="row exercises" ng-class="{'active' : showSet == true}">
+            <div ng-repeat="exercise in exercises"  class="showExercise">
+                <div class="row exercises">
                     <div class="paddingAll">
                         <div class="col-xs-2">
                             <span ng-click="deleteExerciseShow = !deleteExerciseShow" class="glyphicon glyphicon-minus" ng-hide="deleteExerciseShow"></span>
-                            <span ng-click="deleteExercise($parent.$index, $index); deleteExerciseShow = !deleteExerciseShow" class="glyphicon glyphicon-remove" ng-show="deleteExerciseShow"></span>
+                            <span ng-click="deleteExercise($index); deleteExerciseShow = !deleteExerciseShow" class="glyphicon glyphicon-remove" ng-show="deleteExerciseShow"></span>
                         </div>
                         <div class="col-xs-8">
                             <p><span ng-model="exerciseName">{{exercise.exerciseName}}</span>
@@ -108,7 +87,7 @@
                                     {{exercise.targetWeight}}
                                 </td>
                                 <td>
-                                    {{totalReps($parent.$index, $index)}}
+                                    {{totalReps($index)}}
                                 </td>
                             </tr>
                         </table>
@@ -150,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+  
         </div>
         <div class="row workoutName">
                 <div class="col-xs-12">
