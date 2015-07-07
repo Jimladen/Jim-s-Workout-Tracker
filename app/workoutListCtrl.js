@@ -5,7 +5,9 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
     services.getWorkouts().then(function(result) {
             var data = result.data;
              $scope.workouts = data;
+             console.log($scope.workouts);
         })
+
 
 
     $scope.insertExercise = function(exercise) {
@@ -280,6 +282,7 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', function
 
         // Clear input fields after push
         $scope.newExerciseName = "";
+        $scope.searchExerciseTerm = "";
 
         // console.log($scope.workouts[index]);
     };

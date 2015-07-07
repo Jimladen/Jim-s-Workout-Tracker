@@ -336,7 +336,7 @@
 									}
 
 									else {
-										$result[$i]['exercises'][$j]['exercise_data'][] = array();
+										$result[$i]['exercises'][$j]['exercise_data'] = array();
 									}
 									
 								}
@@ -432,7 +432,7 @@
 									}
 
 									else {
-										$result[$i]['exercises'][$j]['exercise_data'][] = array();
+										$result[$i]['exercises'][$j]['exercise_data'] = array();
 									}
 									
 								}

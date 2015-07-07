@@ -267,7 +267,11 @@ input {
 
 .row.sets {
 	background: $lightpink;
-	text-align:center;
+	text-align:center!important;
+
+		 th {
+		  text-align: center!important;
+		}
 
 	input {
 		background: none;
