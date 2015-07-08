@@ -1,5 +1,5 @@
-app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootScope', '$location', '$routeParams', 'workout', 
-    function($scope, $controller, services, $rootScope, $location, $routeParams, workout) {
+app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootScope', '$location', '$routeParams', 'workout', 'workoutService', 
+    function($scope, $controller, services, $rootScope, $location, $routeParams, workout, workoutService) {
 
     var workoutID = ($routeParams.workoutID) ? parseInt($routeParams.workoutID) : 0;
 
@@ -9,32 +9,87 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
             var data = result.data;
              
              $scope.workoutName = data[0].workoutName;
+             $scope.workout = data;
              $scope.exercises = data[0].exercises;
              console.log($scope.exercises);
+             console.log($scope.workout);
+
+             var today = new Date(); 
+            var dd = today.getDate(); 
+            var mm = today.getMonth()+1;//January is 0! 
+            var yyyy = today.getFullYear(); 
+            if(dd<10){dd='0'+dd} 
+            if(mm<10){mm='0'+mm} 
+            var phpDate = yyyy + '-' + mm + '-' + dd;
+            var workoutData = {
+                date: phpDate,
+                workoutNumber: workoutID
+            }
+            //console.log(workoutData);
+             services.insertWorkoutLog(workoutData).then(function(result) {
+                //console.log(result);
+                $scope.workout[0].workoutNumberLog = result.data.unique_id;
+
+                var exercisesLength = $scope.exercises.length;
+                //console.log(exercisesLength);
+             // for (i = 0; i < exercisesLength; i++) {
+
+             //    var exercise = $scope.workout[0].exercises[i];
+             //    console.log(exercise);
+             //    exercise.workoutNumberLog =  $scope.workout[0].workoutNumberLog;
+             //    services.insertExerciseLog(exercise).then(function(results){
+             //        console.log(exercise);
+             //         exercise.exercise_id = results.data.unique_id;
+             //    });
+             // }
+
+             });
+
+
+          
         })
 
-
-    $scope.insertExercise = function(exercise) {
-      services.insertExercise(exercise).then(function(results) {
-          var data = results.data.unique_id;
-           console.log(data);
-      })
-    }
+    var type = 'log';
 
 
-    $scope.deleteExercise = function(parentIndex, index) {
 
-       var id = $scope.workouts[parentIndex].exercises[index].exercise_id;
+    $scope.addItem = function(newExerciseName) {
+
+        var exerciseData = $scope.workout[0];
+        console.log(exerciseData);
+
+        workoutService.addExercise(exerciseData, newExerciseName, type).then(function(results){
+            console.log(results);
+            
+            exerciseData.exercises[results.exerciseIndex].exercise_id = results.unique_id;
+
+        });
+
+        // Clear input fields after push
+        $scope.newExerciseName = "";
+        $scope.searchExerciseTerm = "";
+
+        // console.log($scope.workouts[index]);
+    };
 
 
-        console.log('delete exercise');
+    $scope.deleteExercise = function(index) {
+
+       var id = $scope.workout[0].exercises[index].exercise_id;
+
+
+        console.log(index);
        
         console.log(id);
 
-        services.deleteExercise(id).then(function() {
-            $scope.workouts[parentIndex].exercises.splice(index, 1);
-        });
-
+        // services.deleteExercise(id).then(function() {
+        //     $scope.exercises.splice(index, 1);
+        // });
+        
+        workoutService.deleteExercise(id, type).then(function(results){
+            console.log(results);
+            $scope.exercises.splice(index, 1);
+        })
     }
 
 
@@ -44,22 +99,22 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
         console.log(exerciseData);
     }
 
-    $scope.saveExerciseData = function(topIndex, parentIndex, index) {
+    $scope.saveExerciseData = function(parentIndex, index) {
 
-        var set_id = $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].set_id;
+        var set_id = $scope.exercises[parentIndex].exercise_data[index].set_id;
 
 
         console.log(set_id);
 
         if (set_id != 0) {
-            services.updateExerciseData(set_id, $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index])
+            services.updateExerciseDataLog(set_id, $scope.exercises[parentIndex].exercise_data[index])
         } else {
 
-            services.insertExerciseData($scope.workouts[topIndex].exercises[parentIndex].exercise_data[index]).then(function(results) {
+            services.insertExerciseDataLog($scope.exercises[parentIndex].exercise_data[index]).then(function(results) {
                 console.log(results);
                 var unique_id = results.data.unique_id;
                 console.log(unique_id)
-                $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].set_id = unique_id;
+                $scope.exercises[parentIndex].exercise_data[index].set_id = unique_id;
             });
         }
     }
@@ -94,11 +149,11 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
 
 
 
-    $scope.addSet = function(parentIndex, index) {
-        var workout_id = $scope.workouts[parentIndex].workoutNumber;
-        var exercise_id = $scope.workouts[parentIndex].exercises[index].exercise_id;
+    $scope.addSet = function(index) {
+        var workout_id = $scope.workoutNumber;
+        var exercise_id = $scope.exercises[index].exercise_id;
         // console.log($scope.workouts[parentIndex].exercises[index]);
-        $scope.workouts[parentIndex].exercises[index].exercise_data.push({
+        $scope.exercises[index].exercise_data.push({
             reps: '6',
             weight: '0',
             set_id: '0',
@@ -262,33 +317,7 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
       */
 
 
-      $scope.addItem = function(index, newExerciseName) {
 
-        var workout_id = $scope.workouts[index].workoutNumber;
-
-        console.log($scope.workouts[index].exercises);
-
-        var exerciseLength = $scope.workouts[index].exercises.length;
-
-        if (!exerciseLength) {
-            exerciseLength = 0;
-        }
-
-        console.log(workout_id);
-
-        $scope.workouts[index].exercises.push({
-            exerciseName: newExerciseName,
-            workoutNumber: workout_id,
-            exercise_data: [],
-        });
-
-        $scope.insertExercise($scope.workouts[index].exercises[exerciseLength]);
-
-        // Clear input fields after push
-        $scope.newExerciseName = "";
-
-        // console.log($scope.workouts[index]);
-    };
 
 
 

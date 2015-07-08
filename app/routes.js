@@ -66,8 +66,9 @@ app.config(['$routeProvider',
                 resolve: {
                     workout: function(services, $route) {
                         var workoutID = $route.current.params.workoutID;
+                         console.log(workoutID);
                         return services.getWorkout(workoutID);
-                        console.log(workoutID);
+                       
                     }
                 }
             })

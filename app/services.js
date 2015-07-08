@@ -33,6 +33,11 @@ app.factory("services", ['$http', function($http) {
         })
     }
 
+
+    /* 
+        Get Exercise 
+    */
+
     obj.getExercises = function() {
         return $http.get('exercises.json').success(function(data) {
             return data.data;
@@ -40,12 +45,14 @@ app.factory("services", ['$http', function($http) {
     }
 
 
+
+
+    /* 
+         Workout functions
+    */
+
     obj.getWorkouts = function() {
         return $http.get(serviceBase + 'workouts');
-    }
-
-     obj.getWorkout = function(workoutID) {
-        return $http.get(serviceBase + 'workout?id=' + workoutID);
     }
 
     obj.insertWorkout = function(workout) {
@@ -127,6 +134,67 @@ app.factory("services", ['$http', function($http) {
             return status.data;
         })
     }
+
+
+
+
+    /* 
+        Workout log
+    */
+
+    obj.getWorkout = function(workoutID) {
+        return $http.get(serviceBase + 'workout?id=' + workoutID);
+    }
+
+    obj.insertWorkoutLog = function(workoutData) {
+        console.log(workoutData);
+        return $http.post(serviceBase + 'insertWorkoutLog', workoutData).then(function(results) {
+            return results;
+        });
+    };
+
+
+    obj.insertExerciseLog = function(exercise) {
+
+        console.log(serviceBase + 'insertExerciseLog', exercise);
+        return $http.post(serviceBase + 'insertExerciseLog', exercise).then(function(results) {
+            console.log(results);
+            return results;
+        });
+    };
+
+
+    obj.updateExerciseData = function(id, exercise) {
+        console.log(exercise)
+        console.log(id);
+
+        return $http.post(serviceBase + 'updateExerciseData', {
+            id: id,
+            exercise: exercise
+        }).then(function(status) {
+            console.log(status.data);
+            return status.data;
+        })
+    }
+
+
+    obj.insertExerciseData = function(exerciseData) {
+
+        console.log(serviceBase + 'insertExerciseData', exerciseData);
+        return $http.post(serviceBase + 'insertExerciseData', exerciseData).then(function(results) {
+            console.log(results);
+            return results;
+        });
+    };
+
+    
+    obj.deleteExerciseLog = function(id) {
+        return $http.delete(serviceBase + 'deleteExerciseLog?id=' + id).then(function(status) {
+            return status.data;
+        })
+    }
+
+
 
 
     return obj;

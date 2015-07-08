@@ -48,10 +48,10 @@
                                     {{$index + 1}}
                                 </td>
                                 <td>
-                                    <input name="weight" type="number" placeholder="{{set.weight}}" ng-model="set.weight" ng-change="saveExerciseData($parent.$parent.$index, $parent.$index, $index)">
+                                    <input name="weight" type="number" placeholder="{{set.weight}}" ng-model="set.weight" ng-change="saveExerciseData( $parent.$index, $index)">
                                 </td>
                                 <td>
-                                    <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps" ng-change="saveExerciseData($parent.$parent.$index, $parent.$index, $index)">
+                                    <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps" ng-change="saveExerciseData($parent.$index, $index)">
                                 </td>
                                 <td>
                                     <span class="glyphicon glyphicon-remove" ng-click="deleteSet($parent.$parent.$index, $parent.$index, $index)"></span>
@@ -61,7 +61,7 @@
                                 <table class="table">
                                     <tr>
                                         <td>
-                                            <a ng-click="addSet($parent.$index, $index)">Add set...</a>
+                                            <a ng-click="addSet($index)">Add set...</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row exercises" ng-show="showExercise">
+            <div class="row exercises">
                 <div class="col-xs-12">
                     <div class="paddingAll">
                         <a ng-click="exerciseSelect = !exerciseSelect">Add exercise...</a>
@@ -121,7 +121,7 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="data in exercises | filter:filters | orderBy: 'exerciseName' | searchExercises:searchExerciseTerm">
-                                        <td><a ng-click="addItem($parent.$index, data.exerciseName); filters = {}">{{data.exerciseName}}</a></td>
+                                        <td><a ng-click="addItem(data.exerciseName); filters = {}">{{data.exerciseName}}</a></td>
                                         <td><a ng-click="filters.muscleGroup = data.muscleGroup">{{data.muscleGroup}}</a></td>
                                     </tr>
                                 </tbody>
