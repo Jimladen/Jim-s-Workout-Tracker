@@ -2,6 +2,7 @@
     <div class="col-md-12">
         <div class="row title">
             <div class="col-xs-12">
+                <a href="#/">Go Home</a>
                 <p>{{workoutName}}</p>
             </div>
         </div>
@@ -54,7 +55,7 @@
                                     <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps" ng-change="saveExerciseData($parent.$index, $index)">
                                 </td>
                                 <td>
-                                    <span class="glyphicon glyphicon-remove" ng-click="deleteSet($parent.$parent.$index, $parent.$index, $index)"></span>
+                                    <span class="glyphicon glyphicon-remove" ng-click="deleteSet($parent.$index, $index)"></span>
                                 </td>
                             </tr>
                             <tr>

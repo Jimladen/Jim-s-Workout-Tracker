@@ -31,17 +31,21 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
                 $scope.workout[0].workoutNumberLog = result.data.unique_id;
 
                 var exercisesLength = $scope.exercises.length;
-                //console.log(exercisesLength);
-             // for (i = 0; i < exercisesLength; i++) {
+                console.log(exercisesLength);
+             for (i = 0; i < exercisesLength; i++) {
 
-             //    var exercise = $scope.workout[0].exercises[i];
-             //    console.log(exercise);
-             //    exercise.workoutNumberLog =  $scope.workout[0].workoutNumberLog;
-             //    services.insertExerciseLog(exercise).then(function(results){
-             //        console.log(exercise);
-             //         exercise.exercise_id = results.data.unique_id;
-             //    });
-             // }
+                var exercise = $scope.workout[0].exercises[i];
+                console.log(exercise);
+                exercise.workoutNumberLog =  $scope.workout[0].workoutNumberLog;
+                services.insertExerciseLog(exercise).then(function(results){
+                    console.log(exercise);
+                     exercise.exercise_id = results.data.unique_id;
+                });
+
+
+             }
+
+
 
              });
 
@@ -60,8 +64,6 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
 
         workoutService.addExercise(exerciseData, newExerciseName, type).then(function(results){
             console.log(results);
-            
-            exerciseData.exercises[results.exerciseIndex].exercise_id = results.unique_id;
 
         });
 
@@ -94,83 +96,53 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
 
 
 
-    $scope.insertExerciseData = function(exerciseData) {
-        services.insertExerciseData(exerciseData);
-        console.log(exerciseData);
-    }
-
     $scope.saveExerciseData = function(parentIndex, index) {
 
-        var set_id = $scope.exercises[parentIndex].exercise_data[index].set_id;
-
-
-        console.log(set_id);
-
-        if (set_id != 0) {
-            services.updateExerciseDataLog(set_id, $scope.exercises[parentIndex].exercise_data[index])
-        } else {
-
-            services.insertExerciseDataLog($scope.exercises[parentIndex].exercise_data[index]).then(function(results) {
-                console.log(results);
-                var unique_id = results.data.unique_id;
-                console.log(unique_id)
-                $scope.exercises[parentIndex].exercise_data[index].set_id = unique_id;
-            });
+        var set_id_log = $scope.workout[0].exercises[parentIndex].exercise_data[index].set_id_log;
+        var exerciseData = $scope.workout[0].exercises[parentIndex].exercise_data[index];
+        exerciseData.workoutNumberLog = $scope.workout[0].workoutNumberLog;
+        if (!set_id_log) {
+            set_id_log = 0;
         }
-    }
-
-    $scope.saveAllExerciseData = function(parentIndex, index) {
-
-        console.log('saveall');
-
-        for (var key in $scope.workouts[parentIndex].exercises[index].exercise_data) {
-            if ($scope.workouts[parentIndex].exercises[index].exercise_data.hasOwnProperty(key)) {
-
-
-                if ($scope.workouts[parentIndex].exercises[index].exercise_data[key].set_id == 0) {
-                    services.insertExerciseData($scope.workouts[parentIndex].exercises[index].exercise_data[key]).then(function(results) {
-                        console.log(results);
-                        var unique_id = results.data.unique_id;
-                        var exercise_id = $scope.workouts[parentIndex].exercises[index].exercise_id;
-                        console.log(exercise_id);
-                        $scope.workouts[parentIndex].exercises[index].exercise_data[key].exercise_id = exercise_id;
-
-                        console.log(unique_id);
-                    });
-                } else {
-                    var set_id = $scope.workouts[parentIndex].exercises[index].exercise_data[key].set_id;
-                    services.updateExerciseData(set_id, $scope.workouts[parentIndex].exercises[index].exercise_data[key])
-                }
-                console.log($scope.workouts[parentIndex].exercises[index].exercise_data[key]);
+        console.log(set_id_log);
+        workoutService.saveExerciseData(set_id_log, exerciseData, type).then(function(results){
+            console.log(results);
+            if (!isNaN(results)) {
+                exerciseData.set_id_log = results;
             }
-        }
-
+        });
     }
 
 
 
     $scope.addSet = function(index) {
-        var workout_id = $scope.workoutNumber;
+        var workoutNumberLog = $scope.workout[0].workoutNumberLog;
         var exercise_id = $scope.exercises[index].exercise_id;
         // console.log($scope.workouts[parentIndex].exercises[index]);
         $scope.exercises[index].exercise_data.push({
             reps: '6',
             weight: '0',
             set_id: '0',
-            exercise_id: exercise_id
+            exercise_id: exercise_id,
+            workoutNumberLog: workoutNumberLog
         });
 
 
     }
 
-    $scope.deleteSet = function(topIndex, parentIndex, index) {
+    $scope.deleteSet = function(parentIndex, index) {
         console.log('delete set');
-        var id = $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].set_id;
-
-        console.log(index);
-        services.deleteExerciseData(id).then(function() {
-            $scope.workouts[topIndex].exercises[parentIndex].exercise_data.splice(index, 1);
-        });
+        var id = $scope.workout[0].exercises[parentIndex].exercise_data[index].set_id_log;
+         console.log($scope.workout[0].exercises[parentIndex].exercise_data[index]);
+        if (id) {
+           console.log('has id');
+            services.deleteExerciseDataLog(id).then(function(results) {
+                console.log(results);
+                $scope.workout[0].exercises[parentIndex].exercise_data.splice(index, 1);
+            });
+        } else {
+            $scope.workout[0].exercises[parentIndex].exercise_data.splice(index, 1);
+        }
 
     }
 
@@ -307,63 +279,6 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
 
         // console.log(oneRepMax);
     }
-
-
-
-      /* 
-
-      ITEMS SPECIFIC TO WORKOUT EDIT CONTROLLER
-
-      */
-
-
-
-
-
-
-    $scope.addNewWorkout = function(index) {
-
-        var workout = ({
-            workoutName: 'New Workout',
-            workoutNumber: '0',
-            exercises: []
-        });
-
-        console.log(workout);
-
-        services.insertWorkout(workout).then(function(results) {
-            console.log(results);
-
-            var unique_id = results.data.unique_id;
-            $scope.workouts.push({
-                workoutName: 'New Workout',
-                workoutNumber: unique_id,
-                exercises: []
-            })
-        })
-    }
-
-    $scope.saveWorkoutName = function(index) {
-        console.log(index);
-
-        var workoutName = $scope.workouts[index].workoutName;
-        var workoutNumber = $scope.workouts[index].workoutNumber;
-
-        services.updateWorkoutName(workoutName, workoutNumber);
-    }
-
-    
-
-    $scope.deleteWorkout = function(index) {
-
-
-        var id = $scope.workouts[index].workoutNumber;
-        services.deleteWorkout(id).then(function() {
-            $scope.workouts.splice(index, 1);
-        });
-    }
-
-
 
 
 }])

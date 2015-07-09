@@ -20,7 +20,7 @@
                 <th>Muscle Group&nbsp;</th>
             </thead>
             <tbody>
-                <tr ng-repeat="data in exercises | filter:filters | orderBy: 'exerciseName' | searchExercises:searchExerciseTerm">
+                <tr ng-repeat="data in exercises | filter:filters | orderBy: 'exerciseName' | searchExercises:searchExerciseTerm:strict">
                     <td>{{data.exerciseName}}</td>
                     <td><a ng-click="filters.muscleGroup = data.muscleGroup">{{data.muscleGroup}}</a></td>
                 </tr>

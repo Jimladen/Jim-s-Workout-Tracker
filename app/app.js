@@ -76,10 +76,13 @@ app.filter('searchExercises', function() {
                 var item = items[i];
                 // var letterLength = 0;
 
-                if (typeof searchExerciseTerm != 'undefined') {
+                if (searchExerciseTerm == '') {
+                    console.log('is blank');
+                    break;
+                }
+                if (searchExerciseTerm) {
                     // letterLength = searchExerciseTerm.length;
-
-                    console.log(searchExerciseTerm)
+                   
 
                     if (item.exerciseName.toLowerCase().indexOf(searchExerciseTerm.toLowerCase()) > -1) {
                         filtered.push(item);

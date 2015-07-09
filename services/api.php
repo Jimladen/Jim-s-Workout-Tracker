@@ -713,7 +713,7 @@
 				$this->response('',406);
 			}
 			$exercise = json_decode(file_get_contents("php://input"),true);
-			$column_names = array('exerciseName', 'workoutNumber', 'workoutNumberLog');
+			$column_names = array('exercise_id', 'exerciseName', 'workoutNumber', 'workoutNumberLog');
 			$keys = array_keys($exercise);
 			$columns = '';
 			$values = '';
@@ -751,6 +751,84 @@
 				$this->response('',204);	// If no records "No Content" status
 		}
 
+		
+		/*
+			Exercise Data log 
+		*/
+
+		private function insertExerciseDataLog(){
+
+
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+
+			$exercise = json_decode(file_get_contents("php://input"),true);
+			$column_names = array('exercise_id', 'reps', 'weight', 'set_id', 'workoutNumberLog');
+			$keys = array_keys($exercise);
+			$columns = '';
+			$values = '';
+			foreach($column_names as $desired_key){ // Check the exercise received. If blank insert blank into the array.
+			   if(!in_array($desired_key, $keys)) {
+			   		$$desired_key = '';
+				}else{
+					$$desired_key = $exercise[$desired_key];
+				}
+				$columns = $columns.$desired_key.',';
+				$values = $values."'".$$desired_key."',";
+			}
+			$query = "INSERT INTO exercise_data_log(".trim($columns,',').") VALUES(".trim($values,',').")";
+			if(!empty($exercise)){
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$unique_id = $this->mysqli->insert_id;
+				$success = array('status' => "Success", "msg" => "Exercise Data Created Successfully.", "data" => $exercise, "unique_id" => $unique_id);
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	//"No Content" status
+		}
+
+		private function updateExerciseDataLog(){
+			echo 'test';
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			$exercise = json_decode(file_get_contents("php://input"),true);
+			$id = (int)$exercise['id'];
+			$column_names = array('reps', 'weight', 'set_id');
+			$keys = array_keys($exercise['exercise']);
+			$columns = '';
+			$values = '';
+			foreach($column_names as $desired_key){ // Check the exercise received. If key does not exist, insert blank into the array.
+			   if(!in_array($desired_key, $keys)) {
+			   		$$desired_key = '';
+				}else{
+					$$desired_key = $exercise['exercise'][$desired_key];
+				}
+				$columns = $columns.$desired_key."='".$$desired_key."',";
+			}
+			$query = "UPDATE exercise_data_log SET ".trim($columns,',')." WHERE set_id_log=$id";
+			if(!empty($exercise)){
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$success = array('status' => "Success", "msg" => "Exercises ".$id." Updated Successfully.", "data" => $exercise);
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	// "No Content" status
+		}
+		
+
+		private function deleteExerciseDataLog(){
+			if($this->get_request_method() != "DELETE"){
+				$this->response('',406);
+			}
+			$id = (int)$this->_request['id'];
+			if($id > 0){				
+				$query="DELETE FROM exercise_data_log WHERE set_id_log = $id";
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$success = array('status' => "Success", "msg" => "Successfully deleted one record.");
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	// If no records "No Content" status
+		}
 
 
 		

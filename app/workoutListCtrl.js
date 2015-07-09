@@ -313,13 +313,13 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
     // };
 
 
-    $scope.addItem = function(index, newExerciseName, type) {
+    $scope.addItem = function(index, newExerciseName) {
 
         
         var exerciseData = $scope.workouts[index];
         console.log(exerciseData);
 
-        workoutService.addExercise(exerciseData, newExerciseName).then(function(results){
+        workoutService.addExercise(exerciseData, newExerciseName, type).then(function(results){
             console.log(results);
             
             exerciseData.exercises[results.exerciseIndex].exercise_id = results.unique_id;

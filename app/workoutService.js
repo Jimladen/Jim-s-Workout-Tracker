@@ -5,12 +5,17 @@ app.service('workoutService', function(services){
 
     this.saveExerciseData = function(set_id, exerciseData, type) {
         if (set_id != 0) {
-            console.log('set_id is 0');
+            console.log('set_id is not 0');
+             console.log('type ' + type);
             if (type == 'edit') {
+                console.log(type);
                 services.updateExerciseData(set_id, exerciseData);
             }
-            else {
-                 services.updateExerciseDataLog(set_id, exerciseData);
+            else if (type == 'log') {
+                console.log(type);
+                 return services.updateExerciseDataLog(set_id, exerciseData).then(function(results){
+                    return results;
+                 });
             }
             
         }
@@ -66,7 +71,8 @@ app.service('workoutService', function(services){
         else if (type == 'log') {
             exerciseData.exercises.push({
                 exerciseName: newExerciseName,
-                workoutNumber: workout_id_log,
+                workoutNumber: workout_id,
+                workoutNumberLog: workout_id_log,
                 exercise_data: [],
             });
             return services.insertExerciseLog(exerciseData.exercises[exerciseLength]).then(function(results){
@@ -89,4 +95,7 @@ app.service('workoutService', function(services){
             });
         }
     }
+
+
+    
 })

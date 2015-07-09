@@ -163,12 +163,18 @@ app.factory("services", ['$http', function($http) {
         });
     };
 
+    obj.deleteExerciseLog = function(id) {
+        return $http.delete(serviceBase + 'deleteExerciseLog?id=' + id).then(function(status) {
+            return status.data;
+        })
+    }
 
-    obj.updateExerciseData = function(id, exercise) {
+
+    obj.updateExerciseDataLog = function(id, exercise) {
         console.log(exercise)
         console.log(id);
 
-        return $http.post(serviceBase + 'updateExerciseData', {
+        return $http.post(serviceBase + 'updateExerciseDataLog', {
             id: id,
             exercise: exercise
         }).then(function(status) {
@@ -178,21 +184,21 @@ app.factory("services", ['$http', function($http) {
     }
 
 
-    obj.insertExerciseData = function(exerciseData) {
+    obj.insertExerciseDataLog = function(exerciseData) {
 
-        console.log(serviceBase + 'insertExerciseData', exerciseData);
-        return $http.post(serviceBase + 'insertExerciseData', exerciseData).then(function(results) {
+        console.log(serviceBase + 'insertExerciseDataLog', exerciseData);
+        return $http.post(serviceBase + 'insertExerciseDataLog', exerciseData).then(function(results) {
             console.log(results);
             return results;
         });
     };
 
-    
-    obj.deleteExerciseLog = function(id) {
-        return $http.delete(serviceBase + 'deleteExerciseLog?id=' + id).then(function(status) {
+    obj.deleteExerciseDataLog = function(id) {
+        return $http.delete(serviceBase + 'deleteExerciseDataLog?id=' + id).then(function(status) {
             return status.data;
         })
     }
+
 
 
 
