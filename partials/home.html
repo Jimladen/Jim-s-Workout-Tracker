@@ -2,34 +2,46 @@
     <div class="col-md-12">
         <div class="row title">
             <div class="col-xs-12">
-                <p>Choose workout to start tracking</p>
-                <p><a href="#/workouts/">View/edit workouts</a></p>
+                <p>Jim's workout tracker</p>
             </div>
         </div>
         <div class="row greyBg">
-            <div class="col-xs-12">
             <div class="paddingAll">
-                <a href="#/history">History</a>
-            </div>
-        </div>
-        </div>
-        <div ng-repeat="workout in workouts">
-            <div class="row workoutName" ng-class="{'active' : showExercise == true}"  >
-                <div class="paddingAll">
-                        <div class="col-xs-10">
-                            <a href="#/start-workout/{{workout.workoutNumber}}"><p ng-model="workout.workoutName">{{workout.workoutName}}</p></a>
-                        </div>
-                        <div class="col-xs-2" ng-click="showExercise = !showExercise">
-                            <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
-                        </div>
-                        <div class="clearfix visible-xs-block"></div>
+                <div class="col-xs-4">
+                    <a href="#/history">History</a>
                 </div>
+                <div class="col-xs-8">
+                    <span>View and edit previous workouts</span>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
             </div>
-
-            
         </div>
+         <div class="row greyBg">
+            <div class="paddingAll">
+                <div class="col-xs-4">
+                    <a href="#/workouts">Workout routines</a>
+                </div>
+                <div class="col-xs-8">
+                    <span>View and edit previous workout routines</span>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
             </div>
-    </div>
+        </div>
+
+        <div class="row greyBg">
+            <div class="paddingAll">
+                <div class="col-xs-4">
+                    <a href="#/track-workouts">Start workout</a>
+                </div>
+                <div class="col-xs-8">
+                    <span>Begin tracking a workout</span>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
+            </div>
+        </div>
+
+        
+</div>
 </div>
 <div class="row sets">
     <div class="paddingAll">

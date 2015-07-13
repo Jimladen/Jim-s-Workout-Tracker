@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row title">
+            <div class="col-xs-12">
+                <p>Choose workout to start tracking</p>
+                <p><a href="#/">Go Home</a></p>
+            </div>
+        </div>
+        <div ng-repeat="workout in workouts">
+            <div class="row workoutName" ng-class="{'active' : showExercise == true}">
+                <div class="paddingAll">
+                    <div class="col-xs-12">
+                        <p ng-model="workout.workoutName"> <a href="#/start-workout/{{workout.workoutNumber}}">{{workout.workoutName}} </a></p>
+                    </div>
+                  
+                    <div class="clearfix visible-xs-block"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

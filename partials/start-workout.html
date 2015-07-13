@@ -49,10 +49,10 @@
                                     {{$index + 1}}
                                 </td>
                                 <td>
-                                    <input name="weight" type="number" placeholder="{{set.weight}}" ng-model="set.weight" ng-change="saveExerciseData( $parent.$index, $index)">
+                                    <input name="weight" type="number" placeholder="{{set.weight}}" ng-model="set.weight" ng-blur="saveExerciseData( $parent.$index, $index)">
                                 </td>
                                 <td>
-                                    <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps" ng-change="saveExerciseData($parent.$index, $index)">
+                                    <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps" ng-blur="saveExerciseData($parent.$index, $index)">
                                 </td>
                                 <td>
                                     <span class="glyphicon glyphicon-remove" ng-click="deleteSet($parent.$index, $index)"></span>

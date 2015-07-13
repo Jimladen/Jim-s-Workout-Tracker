@@ -19,7 +19,8 @@ input:focus {
   outline: 0; }
 
 .paddingAll {
-  padding: 20px 0; }
+  padding: 20px 0;
+  display: block; }
 
 .greyBg {
   background: #F8F8F8;

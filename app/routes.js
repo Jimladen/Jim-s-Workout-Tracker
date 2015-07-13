@@ -82,6 +82,39 @@ app.config(['$routeProvider',
                     }
                 }
             })
+            .when('/history/view-workout/:workoutID', {
+                title: 'View Archived Workout',
+                templateUrl: 'partials/start-workout.html',
+                controller: 'trackWorkoutCtrl',
+                resolve: {
+                    workout: function(services, $route) {
+                        var workoutID = $route.current.params.workoutID;
+                         console.log(workoutID);
+                        return services.getWorkout(workoutID);
+                       
+                    }
+                }
+            })
+            .when('/track-workouts', {
+                title: 'Workouts',
+                templateUrl: 'partials/track-workouts.html',
+                controller: 'workoutListCtrl',
+                resolve: {
+                    workouts: function(services, $route) {
+                        return services.getWorkouts();
+                    }
+                }
+            })
+             .when('/chart', {
+                title: 'Workouts',
+                templateUrl: 'partials/chart.html',
+                controller: 'chartCtrl',
+                resolve: {
+                    workouts: function(services, $route) {
+                        return services.getWorkouts();
+                    }
+                }
+            })
             .otherwise({
                 redirectTo: '/'
             });

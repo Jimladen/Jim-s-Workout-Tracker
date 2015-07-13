@@ -1,4 +1,4 @@
-app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workoutService', '$location', '$routeParams', function($scope, $controller, services, workoutService, $location, $routeParams) {
+app.controller('chartCtrl', ['$scope', '$controller', 'services', 'workoutService', '$location', '$routeParams', function($scope, $controller, services, workoutService, $location, $routeParams) {
 
     console.log($location.path())
 
@@ -6,20 +6,6 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
     services.getWorkouts().then(function(result) {
         var data = result.data;
         // console.log(data);
-
-
-        if ($location.path() == '/history') {
-            var workoutLength = data.length;
-            for (i = 0; i < workoutLength; i++) {
-
-                 data[i].totalTrackedWorkouts = 0;
-
-                if (data[i].trackedWorkouts) {
-                    var totalWorkouts = data[i].trackedWorkouts.length;
-                    data[i].totalTrackedWorkouts = totalWorkouts;
-                }
-            }
-        }
 
         $scope.workouts = data;
         console.log($scope.workouts);

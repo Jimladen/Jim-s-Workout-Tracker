@@ -1,37 +1,23 @@
-app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workoutService', '$location', '$routeParams', function($scope, $controller, services, workoutService, $location, $routeParams) {
+app.controller('workoutHistoryCtrl', ['$scope', '$controller', 'services', 'workoutService', '$location', function($scope, $controller, services, workoutService, $location)
+{
 
-    console.log($location.path())
 
 
-    services.getWorkouts().then(function(result) {
+    services.getWorkouts().then(function(result)
+    {
         var data = result.data;
-        // console.log(data);
-
-
-        if ($location.path() == '/history') {
-            var workoutLength = data.length;
-            for (i = 0; i < workoutLength; i++) {
-
-                 data[i].totalTrackedWorkouts = 0;
-
-                if (data[i].trackedWorkouts) {
-                    var totalWorkouts = data[i].trackedWorkouts.length;
-                    data[i].totalTrackedWorkouts = totalWorkouts;
-                }
-            }
-        }
-
         $scope.workouts = data;
         console.log($scope.workouts);
     })
 
 
-    var type = 'edit';
+    var type = 'history';
 
 
 
 
-    $scope.deleteExercise = function(parentIndex, index) {
+    $scope.deleteExercise = function(parentIndex, index)
+    {
 
         var id = $scope.workouts[parentIndex].exercises[index].exercise_id;
 
@@ -40,7 +26,8 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
         console.log(id);
 
-        services.deleteExercise(id).then(function() {
+        services.deleteExercise(id).then(function()
+        {
             $scope.workouts[parentIndex].exercises.splice(index, 1);
         });
 
@@ -48,12 +35,14 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
 
 
-    $scope.saveExerciseData = function(topIndex, parentIndex, index) {
+    $scope.saveExerciseData = function(topIndex, parentIndex, index)
+    {
 
         var set_id = $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].set_id;
         var exerciseData = $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index];
 
-        workoutService.saveExerciseData(set_id, exerciseData, type).then(function(results) {
+        workoutService.saveExerciseData(set_id, exerciseData, type).then(function(results)
+        {
             exerciseData.set_id = results;
         });
 
@@ -63,11 +52,13 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
 
 
-    $scope.addSet = function(parentIndex, index) {
+    $scope.addSet = function(parentIndex, index)
+    {
         var workout_id = $scope.workouts[parentIndex].workoutNumber;
         var exercise_id = $scope.workouts[parentIndex].exercises[index].exercise_id;
         // console.log($scope.workouts[parentIndex].exercises[index]);
-        $scope.workouts[parentIndex].exercises[index].exercise_data.push({
+        $scope.workouts[parentIndex].exercises[index].exercise_data.push(
+        {
             reps: '6',
             weight: '0',
             set_id: '0',
@@ -77,19 +68,22 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
     }
 
-    $scope.deleteSet = function(topIndex, parentIndex, index) {
+    $scope.deleteSet = function(topIndex, parentIndex, index)
+    {
         console.log('delete set');
         var id = $scope.workouts[topIndex].exercises[parentIndex].exercise_data[index].set_id;
 
         console.log(index);
-        services.deleteExerciseData(id).then(function() {
+        services.deleteExerciseData(id).then(function()
+        {
             $scope.workouts[topIndex].exercises[parentIndex].exercise_data.splice(index, 1);
         });
 
     }
 
 
-    $scope.totalReps = function(parentIndex, index) {
+    $scope.totalReps = function(parentIndex, index)
+    {
         //console.log('total reps called');
 
         //console.log($scope.exercises[index]);
@@ -126,7 +120,8 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
         var oneRepMax = workoutService.oneRepMax(exerciseData);
 
-        if (!oneRepMax) {
+        if (!oneRepMax)
+        {
             oneRepMax = 0;
         }
 
@@ -136,7 +131,8 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
         //var targetWeight = $scope.targetWeight(total, index);
 
-        if (!targetWeight) {
+        if (!targetWeight)
+        {
             targetWeight = 0;
         }
 
@@ -149,13 +145,15 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
 
 
-    $scope.addItem = function(index, newExerciseName) {
+    $scope.addItem = function(index, newExerciseName)
+    {
 
 
         var exerciseData = $scope.workouts[index];
         console.log(exerciseData);
 
-        workoutService.addExercise(exerciseData, newExerciseName, type).then(function(results) {
+        workoutService.addExercise(exerciseData, newExerciseName, type).then(function(results)
+        {
             console.log(results);
 
             exerciseData.exercises[results.exerciseIndex].exercise_id = results.unique_id;
@@ -171,9 +169,11 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
 
 
-    $scope.addNewWorkout = function(index) {
+    $scope.addNewWorkout = function(index)
+    {
 
-        var workout = ({
+        var workout = (
+        {
             workoutName: 'New Workout',
             workoutNumber: '0',
             exercises: []
@@ -181,11 +181,13 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
         console.log(workout);
 
-        services.insertWorkout(workout).then(function(results) {
+        services.insertWorkout(workout).then(function(results)
+        {
             console.log(results);
 
             var unique_id = results.data.unique_id;
-            $scope.workouts.push({
+            $scope.workouts.push(
+            {
                 workoutName: 'New Workout',
                 workoutNumber: unique_id,
                 exercises: []
@@ -193,7 +195,8 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
         })
     }
 
-    $scope.saveWorkoutName = function(index) {
+    $scope.saveWorkoutName = function(index)
+    {
         console.log(index);
 
         var workoutName = $scope.workouts[index].workoutName;
@@ -204,9 +207,11 @@ app.controller('workoutListCtrl', ['$scope', '$controller', 'services', 'workout
 
 
 
-    $scope.deleteWorkout = function(index) {
+    $scope.deleteWorkout = function(index)
+    {
         var id = $scope.workouts[index].workoutNumber;
-        services.deleteWorkout(id).then(function() {
+        services.deleteWorkout(id).then(function()
+        {
             $scope.workouts.splice(index, 1);
         });
     }

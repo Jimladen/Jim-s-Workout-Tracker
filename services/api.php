@@ -5,10 +5,10 @@
 	
 		public $data = "";
 		
-		const DB_SERVER = "localhost";
-		const DB_USER = "root";
-		const DB_PASSWORD = "root";
-		const DB = "angularcode_customer";
+		const DB_SERVER = "176.56.62.13";
+		const DB_USER = "admin_jim";
+		const DB_PASSWORD = "Zhu4_r46";
+		const DB = "admin_jim";
 
 		private $db = NULL;
 		private $mysqli = NULL;
@@ -355,6 +355,41 @@
 
 						else {
 							$result[$i]['exercises'] = array();
+						}
+
+
+
+						// Query tracked workouts and build object 
+
+						$trackedWorkoutsQuery = "SELECT * FROM workouts_log WHERE workoutNumber = $workoutNumber";
+
+						$tw = $this->mysqli->query($trackedWorkoutsQuery) or die ($this->mysqli->error.__LINE__);
+
+						if ($tw->num_rows > 0) {
+
+							$k = 0;
+
+							while ($row = $tw->fetch_assoc()) {
+								$result[$i]['trackedWorkouts'][] = $row;								
+								if ($row['workoutNumberLog']) {
+									$workoutNumberLog = $row['workoutNumberLog'];
+
+									//echo $workoutNumberLog;
+
+									$trackedExercisesQuery = "SELECT * FROM exercises_log WHERE workoutNumberLog = $workoutNumberLog";
+									$te = $this->mysqli->query($trackedExercisesQuery) or die ($this->mysqli->error.__LINE__);
+
+									
+									if ($te->num_rows > 0) {
+
+										while($row = $te->fetch_assoc()) {
+
+											$result[$i]['trackedWorkouts'][$k]['exercises'][] = $row;
+										}
+									}
+								}
+								$k++;
+							}
 						}
 						
 					}
@@ -713,7 +748,7 @@
 				$this->response('',406);
 			}
 			$exercise = json_decode(file_get_contents("php://input"),true);
-			$column_names = array('exercise_id', 'exerciseName', 'workoutNumber', 'workoutNumberLog');
+			$column_names = array('exercise_id', 'exerciseName', 'workoutNumber', 'workoutNumberLog', 'oneRepMax');
 			$keys = array_keys($exercise);
 			$columns = '';
 			$values = '';
@@ -730,7 +765,7 @@
 			if(!empty($exercise)){
 				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
 				$unique_id = $this->mysqli->insert_id;
-				$success = array('status' => "Success", "msg" => "Exercise Created Successfully.", "data" => $exercise, 'unique_id' => $unique_id);
+				$success = array('status' => "Success", "msg" => "Exercise Created Successfully.", "data" => $exercise, 'unique_id' => $unique_id, 'columns' => $columns);
 				$this->response($this->json($success),200);
 			}else
 				$this->response('',204);	//"No Content" status
@@ -830,6 +865,124 @@
 				$this->response('',204);	// If no records "No Content" status
 		}
 
+
+		private function updateOneRepMax(){
+			echo 'test';
+			if($this->get_request_method() != "POST"){
+				$this->response('',406);
+			}
+			$exercise = json_decode(file_get_contents("php://input"),true);
+			$id = (int)$exercise['id'];
+			$oneRepMax = $exercise['oneRepMax'];
+
+			$query = "UPDATE exercises_log SET oneRepMax=$oneRepMax WHERE exercise_id=$id";
+			if(!empty($exercise)){
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				$success = array('status' => "Success", "msg" => "Exercises ".$id." Updated Successfully.", "data" => $exercise);
+				$this->response($this->json($success),200);
+			}else
+				$this->response('',204);	// "No Content" status
+		}
+
+		/*
+			Tracked workout
+		*/
+
+
+			private function trackedWorkout(){	
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			$id = (int)$this->_request['id'];
+			if($id > 0){	
+				$query="SELECT * FROM workouts_log WHERE workoutNumberLog = $id";
+			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+
+			if($r->num_rows > 0){
+				$result = array();
+				$exerciseResult = array();
+						
+				$i = 0;
+				
+
+				
+				while($row = $r->fetch_assoc()){
+				
+					$result[] = $row;
+
+
+					
+
+						//echo ' workoutNumber ' . $workoutNumber;
+
+						$exerciseQuery = "SELECT * FROM exercises_log WHERE workoutNumberLog = $id";
+
+						$rt = $this->mysqli->query($exerciseQuery) or die ($this->mysqli->error.__LINE__);
+
+
+						$exerciseDataResult = array();
+
+						if ($rt->num_rows > 0){
+							$j = 0;
+							 
+							while($row = $rt->fetch_assoc()){
+
+								$result[$i]['exercises'][] = $row;
+
+								if($row['exercise_id']) {
+									$exercise_id = $row['exercise_id'];
+
+									$exerciseDataQuery = "SELECT * FROM exercise_data_log WHERE exercise_id = $exercise_id AND workoutNumberLog = $id";
+									$red = $this->mysqli->query($exerciseDataQuery) or die ($this->mysqli->error.__LINE__);
+
+									
+									if ($red->num_rows > 0) {
+										while($row = $red->fetch_assoc()) {
+											$result[$i]['exercises'][$j]['exercise_data'][] = $row;
+											//echo 'J: ' . $j . ' ' ;
+										}
+									}
+
+									else {
+										$result[$i]['exercises'][$j]['exercise_data'] = array();
+									}
+									
+								}
+
+								//echo ' i ' . $i;
+
+								//print_r($result[$i]['exercises'] );
+								//print_r($row);
+
+								$j++; 
+
+							} // while $rt
+						} // if $rt 
+
+					
+
+						else {
+							$result[$i]['exercises'] = array();
+						}
+						
+					}
+
+					//echo $workoutNumber;
+
+
+					$i++;
+					
+				
+
+				//print_r($data);
+
+				//print_r($result);
+
+				$this->response($this->json($result), 200); // send user details
+			}
+			}
+			$this->response('',204);	// If no records "No Content" status
+		} // workout
 
 		
 		/*

@@ -199,8 +199,20 @@ app.factory("services", ['$http', function($http) {
         })
     }
 
+    obj.updateOneRepMax = function(exercise_id, oneRepMax) {
+        return $http.post(serviceBase + 'updateOneRepMax', {
+            id: exercise_id,
+            oneRepMax: oneRepMax
+        }).then(function(status) {
+            console.log(status.data);
+            return status.data;
+        })
+    }
 
 
+    obj.getTrackedWorkout = function(workoutID) {
+        return $http.get(serviceBase + 'trackedWorkout?id=' + workoutID);
+    }
 
 
     return obj;
