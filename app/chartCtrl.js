@@ -1,3 +1,8 @@
+
+
+
+
+
 app.controller('chartCtrl', ['$scope', '$controller', 'services', 'workoutService', '$location', '$routeParams', function($scope, $controller, services, workoutService, $location, $routeParams) {
 
     console.log($location.path())
@@ -6,6 +11,17 @@ app.controller('chartCtrl', ['$scope', '$controller', 'services', 'workoutServic
     services.getWorkouts().then(function(result) {
         var data = result.data;
         // console.log(data);
+
+        var workoutLength = data.length;
+        for (i = 0; i < workoutLength; i++) {
+
+            data[i].totalTrackedWorkouts = 0;
+
+            if (data[i].trackedWorkouts) {
+                var totalWorkouts = data[i].trackedWorkouts.length;
+                data[i].totalTrackedWorkouts = totalWorkouts;
+            }
+        }
 
         $scope.workouts = data;
         console.log($scope.workouts);
@@ -201,3 +217,116 @@ app.controller('chartCtrl', ['$scope', '$controller', 'services', 'workoutServic
 
 
 }])
+
+
+
+app.directive('chartPlugin', ['$compile', function($compile) {
+    return {
+        restrict: 'A',
+        template: ' <canvas id="myChart" width="400" height="400"></canvas>',
+        controller: ['$scope', 'services', function($scope, services) {
+            services.getWorkouts().then(function(result) {
+                var data = result.data;
+                console.log(data);
+
+                var dataPoints = [];
+                var dateValues = [];
+
+                // angular.forEach(data, function(value){
+                //     dataPoints.push(value);
+                // });
+
+
+                // for (i = 0; i < data.length; i++) {
+
+                //     console.log(data[i].trackedWorkouts)
+
+                //     var trackedWorkouts = data[i].trackedWorkouts;
+
+                //     for (i = 0; i < trackedWorkouts.length; i++) {
+
+                //         var trackedExercises = trackedWorkouts[i];
+
+                //         console.log(trackedExercises.exercises);
+
+                //         for (i = 0; i < trackedExercises.exercises.length; i++) {
+                            
+                //             var exerciseName = trackedExercises.exercises[i].oneRepMax;
+
+                //             console.log(trackedExercises.exercises[i].exerciseName);
+
+                //             dataPoints.push(exerciseName) ; 
+                //         }
+
+                                             
+                //     }
+                // }
+
+
+                for (i = 0; i < data.length; i++) {
+                    console.log(data[i].trackedWorkouts);
+
+                    if (data[i].trackedWorkouts) {
+                        for (j = 0; j < data[i].trackedWorkouts.length; j++) {
+                            console.log(data[i].trackedWorkouts[j]);
+
+                            var date = data[i].trackedWorkouts[j].date;
+
+                            for (k=0; k < data[i].trackedWorkouts[j].exercises.length; k++) {
+
+                                
+
+
+                                var exercise = data[i].trackedWorkouts[j].exercises[k]
+                                if(exercise.exerciseName == 'Barbell Incline Bench Press Medium-Grip') {
+                                    var oneRepMax = exercise.oneRepMax;
+                                    console.log(exercise.oneRepMax);
+                                     dataPoints.push(oneRepMax); 
+                                     dateValues.push(date);
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+
+                $scope.dataPoints = dataPoints;
+                $scope.dateValues = dateValues;
+
+                console.log($scope.dataPoints)
+            })
+        }],
+        link: function(scope) {
+
+            scope.$watch('dataPoints', function() {
+                    //console.log(dataPoints);
+
+                    chartGraph(scope.dateValues, scope.dataPoints);
+                })
+                // console.log(dataPoints);
+
+        }
+    }
+}]);
+
+
+var chartGraph = function(dateValues, dataPoints) {
+    console.log(dateValues, dataPoints);
+    var data = {
+        labels: dateValues,
+        datasets: [{
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: dataPoints
+        }]
+    };
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myLineChart = new Chart(ctx).Line(data);
+}
+

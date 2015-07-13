@@ -1,6 +1,8 @@
 var app = angular.module('myApp', ['ngAnimate', 'ngRoute', 'ui.bootstrap']);
 
 
+
+
 app.controller('listCtrl', function($scope, services) {
     services.getCustomers().then(function(data) {
         $scope.customers = data.data;
@@ -82,7 +84,7 @@ app.filter('searchExercises', function() {
                 }
                 if (searchExerciseTerm) {
                     // letterLength = searchExerciseTerm.length;
-                   
+
 
                     if (item.exerciseName.toLowerCase().indexOf(searchExerciseTerm.toLowerCase()) > -1) {
                         filtered.push(item);
@@ -156,7 +158,7 @@ app.factory('exerciseListMethodFactory', function($scope, services, $log) {
                     }
                 }
 
-               // console.log($scope.muscleGroupsFilter);
+                // console.log($scope.muscleGroupsFilter);
             });
         }
     }
@@ -212,7 +214,7 @@ app.controller('exerciseListCtrl', function($scope, services, $log) {
             }
         }
 
-       // console.log($scope.muscleGroupsFilter);
+        // console.log($scope.muscleGroupsFilter);
     });
 });
 
@@ -251,4 +253,3 @@ app.controller('productEditCtrl', function($scope, $rootScope, $location, $route
 
     console.log(product.data.productStock);
 });
-
