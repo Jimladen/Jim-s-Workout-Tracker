@@ -72,6 +72,16 @@ app.config(['$routeProvider',
                     }
                 }
             })
+            .when('/history', {
+                title: 'Workout History',
+                templateUrl: 'partials/history.html',
+                controller: 'workoutListCtrl',
+                resolve: {
+                    workouts: function(services, $route) {
+                        return services.getWorkouts();
+                    }
+                }
+            })
             .otherwise({
                 redirectTo: '/'
             });

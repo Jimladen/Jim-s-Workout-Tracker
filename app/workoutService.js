@@ -97,5 +97,85 @@ app.service('workoutService', function(services){
     }
 
 
-    
+
+    this.totalReps = function(exerciseData) {
+         
+
+        var total = 0;
+        for (var i = 0; i < exerciseData.length; i++) {
+            //console.log($scope.exercises[index].exercise_data);
+            var data = exerciseData[i];
+
+           // console.log(data.reps);
+
+            total += (parseInt(data.reps));
+        }
+
+        if (!total) {
+            total = 0;
+        }
+
+        //console.log(exerciseData);
+        
+
+        return total;
+    }
+
+
+    this.totalWeight = function(exerciseData) {
+
+        var total = 0;
+        for (var i = 0; i < exerciseData.length; i++) {
+            // console.log($scope.workouts[parentIndex].exercises[index].exercise_data);
+            var data = exerciseData[i];
+
+            // console.log(data.weight);
+
+            total += (parseInt(data.weight));
+        }
+
+        if (!total) {
+            total = 0;
+        }
+        return total;
+    }
+
+    this.oneRepMax = function(exerciseData) {
+
+        var getAverageReps = this.totalReps(exerciseData) / exerciseData.length;
+
+        var oneRepMax = parseInt(this.averageWeight(exerciseData) / (1.0278 - (0.0278 * getAverageReps)));
+
+        return oneRepMax;
+    }
+
+
+    this.totalSets = function(exerciseData) {
+
+        var total = exerciseData.length;
+
+        if (!total) {
+            total = 0;
+        }
+        return total;
+    }
+
+    this.averageWeight = function(exerciseData) {
+        var totalSets = this.totalSets(exerciseData);
+        var totalWeight = this.totalWeight(exerciseData);
+        var averageWeight = totalWeight / totalSets;
+
+        return averageWeight;
+    }
+
+
+    this.targetWeight = function(exerciseData) {
+        var getAverageReps = this.totalReps(exerciseData) / exerciseData.length;
+
+        var targetWeight = parseInt(this.averageWeight(exerciseData) / (1.0278 - (0.0278 * getAverageReps)) * 0.90);
+
+        return targetWeight;
+    }
+
+
 })

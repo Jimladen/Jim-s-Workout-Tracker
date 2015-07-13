@@ -21,6 +21,10 @@ input:focus {
 .paddingAll {
   padding: 20px 0; }
 
+.greyBg {
+  background: #F8F8F8;
+  border: 1px solid #dadada; }
+
 .workoutName {
   background: #F8F8F8;
   border: 1px solid #dadada; }
