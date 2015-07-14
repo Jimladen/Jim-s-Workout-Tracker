@@ -1,0 +1,122 @@
+ <div ng-repeat="exercise in exercises" class="showExercise">
+            <div class="row exercises">
+                <div class="paddingAll">
+                    <div class="col-xs-2">
+                        <span ng-click="deleteExerciseShow = !deleteExerciseShow" class="glyphicon glyphicon-minus" ng-hide="deleteExerciseShow"></span>
+                        <span ng-click="deleteExercise($index); deleteExerciseShow = !deleteExerciseShow" class="glyphicon glyphicon-remove" ng-show="deleteExerciseShow"></span>
+                    </div>
+                    <div class="col-xs-8">
+                        <p><span ng-model="exerciseName">{{exercise.exerciseName}}</span>
+                        </p>
+                    </div>
+                    <div class="col-xs-2" ng-click="showSet = !showSet">
+                        <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="row sets" ng-show="showSet" class="showSet">
+                <div class="paddingAll">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Set
+                                </th>
+                                <th>
+                                    Weight(kg)
+                                </th>
+                                <th>
+                                    Reps
+                                </th>
+                                <th>
+                                    &nbsp;
+                                </th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="set in exercise.exercise_data">
+                            <td>
+                                {{$index + 1}}
+                            </td>
+                            <td>
+                                <input name="weight" type="number" placeholder="{{set.weight}}" ng-model="set.weight" ng-blur="saveExerciseData( $parent.$index, $index)">
+                            </td>
+                            <td>
+                                <input name="reps" type="number" placeholder="{{set.reps}}" ng-model="set.reps" ng-blur="saveExerciseData($parent.$index, $index)">
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-remove" ng-click="deleteSet($parent.$index, $index)"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <a ng-click="addSet($index)">Add set...</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                1RM
+                            </th>
+                            <th>
+                                90% 1RM
+                            </th>
+                            <th>
+                                Reps
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{exercise.oneRepMax}}
+                            </td>
+                            <td>
+                                {{exercise.targetWeight}}
+                            </td>
+                            <td>
+                                {{totalReps($index)}}
+                            </td>
+                        </tr>
+                    </table>
+                    </table>
+                    <div class="clearfix visible-xs-block"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row exercises">
+            <div class="col-xs-12">
+                <div class="paddingAll">
+                    <a ng-click="exerciseSelect = !exerciseSelect">Add exercise...</a>
+                    <div ng-show="exerciseSelect" ng-controller="exerciseListCtrl" class="exerciseSelect">
+                        <input type="text" class="form-control" ng-model="searchExerciseTerm" placeholder="Start typing exercise name...">
+                        <span ng-bind="exerciseName"></span>
+                        <a ng-click="showFilters = !showFilters" class="showMuscleFilters"><span ng-hide="showFilters">Show</span><span ng-show="showFilters">Hide</span> muscle filters</a>
+                        <div class="muscleGroupFilters" ng-show="showFilters">
+                            <span ng-repeat="d in muscleGroupsFilter" class="muscleGroupFilters">
+
+                        <button type="button" class="btn" ng-click="filters.muscleGroup = d.muscleGroup">
+                            {{d.muscleGroup}}
+                        </button>
+                        </span>
+                        </div>
+                        <button type="button" class="btn" ng-click="filters = {}" ng-show="filters.muscleGroup">{{filters.muscleGroup}} <span class="glyphicon glyphicon-remove"></span></button>
+                        <table class="table">
+                            <thead>
+                                <th>Exercise Name&nbsp;</th>
+                                <th>Muscle Group&nbsp;</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in exercises | filter:filters | orderBy: 'exerciseName' | searchExercises:searchExerciseTerm">
+                                    <td><a ng-click="addItem(data.exerciseName); filters = {}">{{data.exerciseName}}</a></td>
+                                    <td><a ng-click="filters.muscleGroup = data.muscleGroup">{{data.muscleGroup}}</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>

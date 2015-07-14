@@ -21,7 +21,7 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
         }
         var phpDate = yyyy + '-' + mm + '-' + dd;
 
-
+        $scope.date = dd + '-' + mm + '-' + yyyy;
 
         if ($location.path().indexOf('history/view-workout/') > -1) {
              services.getTrackedWorkout(workoutID).then(function(result) {
@@ -113,7 +113,12 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
             var exerciseData = $scope.workout[0].exercises[parentIndex].exercise_data[index];
             exerciseData.workoutNumberLog = $scope.workout[0].workoutNumberLog;
 
-            services.updateOneRepMax($scope.exercises[index].exercise_id, $scope.exercises[index].oneRepMax)
+
+             var workoutNumberLog = $scope.workout[0].workoutNumberLog;
+             var exercise_id = $scope.exercises[index].exercise_id;
+             var oneRepMax = $scope.exercises[index].oneRepMax;
+
+
 
             if (!set_id_log) {
                 set_id_log = 0;
@@ -123,6 +128,9 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
                 console.log(results);
                 if (!isNaN(results)) {
                     exerciseData.set_id_log = results;
+                    services.updateOneRepMax(workoutNumberLog, exercise_id, oneRepMax).then(function(results) {
+                        console.log(results);
+                    })
                 }
             });
         }
@@ -194,11 +202,15 @@ app.controller('trackWorkoutCtrl', ['$scope', '$controller', 'services', '$rootS
 
             var oneRepMax = workoutService.oneRepMax(exerciseData);
 
+           
+
             if (!oneRepMax) {
                 oneRepMax = 0;
             }
 
             $scope.exercises[index].oneRepMax = oneRepMax;
+
+            console.log($scope.exercises[index].oneRepMax)
 
 
 

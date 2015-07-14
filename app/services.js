@@ -199,9 +199,10 @@ app.factory("services", ['$http', function($http) {
         })
     }
 
-    obj.updateOneRepMax = function(exercise_id, oneRepMax) {
+    obj.updateOneRepMax = function(workoutNumberLog, exercise_id, oneRepMax) {
         return $http.post(serviceBase + 'updateOneRepMax', {
             id: exercise_id,
+            workoutNumberLog: workoutNumberLog,
             oneRepMax: oneRepMax
         }).then(function(status) {
             console.log(status.data);

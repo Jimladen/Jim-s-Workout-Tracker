@@ -867,15 +867,16 @@
 
 
 		private function updateOneRepMax(){
-			echo 'test';
+			
 			if($this->get_request_method() != "POST"){
 				$this->response('',406);
 			}
 			$exercise = json_decode(file_get_contents("php://input"),true);
 			$id = (int)$exercise['id'];
+			$workoutNumberLog = (int)$exercise['workoutNumberLog'];
 			$oneRepMax = $exercise['oneRepMax'];
-
-			$query = "UPDATE exercises_log SET oneRepMax=$oneRepMax WHERE exercise_id=$id";
+			echo 'oneRepMax' . $oneRepMax; 
+			$query = "UPDATE exercises_log SET oneRepMax=$oneRepMax WHERE exercise_id=$id AND workoutNumberLog=$workoutNumberLog";
 			if(!empty($exercise)){
 				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
 				$success = array('status' => "Success", "msg" => "Exercises ".$id." Updated Successfully.", "data" => $exercise);

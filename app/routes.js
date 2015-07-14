@@ -84,7 +84,7 @@ app.config(['$routeProvider',
             })
             .when('/history/view-workout/:workoutID', {
                 title: 'View Archived Workout',
-                templateUrl: 'partials/start-workout.html',
+                templateUrl: 'partials/view-workout.html',
                 controller: 'trackWorkoutCtrl',
                 resolve: {
                     workout: function(services, $route) {

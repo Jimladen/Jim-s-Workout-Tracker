@@ -8,10 +8,38 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-            
-            <div chart-plugin></div>
+            <p> name model : {{exerciseNameModel}} </p>
+                <div chart-plugin ng-model="exerciseNameModel"></div>
+            </div>
+        </div>
+        <div ng-repeat="workout in workouts">
+            <div class="row workoutName" ng-class="{'active' : showExercise == true}">
+                <div class="paddingAll">
+                    <form ng-submit="saveWorkoutName($index)">
+                        <div class="col-xs-2">
+                            <span ng-click="deleteWorkoutShow = !deleteWorkoutShow" class="glyphicon glyphicon-minus" ng-hide="deleteWorkoutShow"></span>
+                            <span ng-click="deleteWorkout($index)" class="glyphicon glyphicon-remove" ng-class="deleteClass" ng-show="deleteWorkoutShow"></span>
+                        </div>
+                        <div class="col-xs-8">
+                           <p ng-model="workout.workoutName">{{workout.workoutName}}</p>
+                        </div>
+                        <div class="col-xs-2" ng-click="showExercise = !showExercise">
+                            <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                    </form>
+                </div>
+            </div>
+            <div ng-repeat="exercise in workout.exercises" ng-show="showExercise" class="showExercise">
+                <div class="row exercises" ng-class="{'active' : showSet == true}">
+                    <div class="paddingAll">
+                        <div class="col-xs-12">
+                            <a ng-click="updateNameModel($parent.$index, $index)"><span ng-model="exerciseName" ng-exercise-name="{{exercise.exerciseName}}">{{exercise.exerciseName}}</span></a>
 
-               
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
