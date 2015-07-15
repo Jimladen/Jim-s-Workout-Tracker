@@ -34,13 +34,6 @@ app.controller('chartCtrl', ['$scope', '$controller', 'services', 'workoutServic
 
 
 
-app.directive('ngExerciseName', function() {
-    return {
-        controller: function($scope) {}
-    }
-});
-
-
 app.directive('chartPlugin', ['$compile', function($compile) {
     return {
         restrict: 'A',
@@ -53,11 +46,26 @@ app.directive('chartPlugin', ['$compile', function($compile) {
 
             services.getWorkouts().then(function(result) {
                 var data = result.data;
+               
+
+               
                 console.log(data);
 
                 $scope.workouts = result.data;
 
+                firstExerciseName = $scope.workouts[0].exercises[0].exerciseName;
+                
 
+                    var values = getChartData(result.data, firstExerciseName);
+                    var dataPoints = values[0];
+                    var dateValues = values[1];
+
+                    console.log(dataPoints)
+
+                    chartGraph(dateValues, dataPoints);
+               
+
+                 console.log(firstExerciseName);
 
             })
         }],
@@ -67,38 +75,11 @@ app.directive('chartPlugin', ['$compile', function($compile) {
             scope.$watch('ngModel', function() {
                     //console.log(dataPoints);
 
-
-                    var dataPoints = [];
-                    var dateValues = [];
                     var data = scope.workouts;
 
-                    for (i = 0; i < data.length; i++) {
-                        console.log(data[i].trackedWorkouts);
-
-                        if (data[i].trackedWorkouts) {
-                            for (j = 0; j < data[i].trackedWorkouts.length; j++) {
-                                console.log(data[i].trackedWorkouts[j]);
-
-                                var date = data[i].trackedWorkouts[j].date;
-
-                                for (k = 0; k < data[i].trackedWorkouts[j].exercises.length; k++) {
-
-                                    var exercise = data[i].trackedWorkouts[j].exercises[k]
-                                    if (exercise.exerciseName == scope.ngModel) {
-                                        var oneRepMax = exercise.oneRepMax;
-                                        console.log(exercise.oneRepMax);
-                                        dataPoints.push(oneRepMax);
-                                        dateValues.push(date);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-
-
-                    var dataPoints = dataPoints;
-                    var dateValues = dateValues;
+                    var values = getChartData(data, scope.ngModel);
+                    var dataPoints = values[0];
+                    var dateValues = values[1];
 
                     console.log(dataPoints)
 
@@ -109,6 +90,39 @@ app.directive('chartPlugin', ['$compile', function($compile) {
         }
     }
 }]);
+
+
+getChartData = function(data, exerciseNameModel) {
+
+                    var dataPoints = [];
+                    var dateValues = [];
+
+                    for (i = 0; i < data.length; i++) {
+                       
+
+                        if (data[i].trackedWorkouts) {
+                             console.log(data[i].trackedWorkouts);
+                            for (j = 0; j < data[i].trackedWorkouts.length; j++) {
+                                console.log(data[i].trackedWorkouts[j]);
+
+                                var date = data[i].trackedWorkouts[j].date;
+
+                                for (k = 0; k < data[i].trackedWorkouts[j].exercises.length; k++) {
+
+                                    var exercise = data[i].trackedWorkouts[j].exercises[k]
+                                    if (exercise.exerciseName == exerciseNameModel) {
+                                        var oneRepMax = exercise.oneRepMax;
+                                        console.log(exercise.oneRepMax);
+                                        dataPoints.push(oneRepMax);
+                                        dateValues.push(date);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    return [dataPoints, dateValues];
+}
 
 
 var chartGraph = function(dateValues, dataPoints) {

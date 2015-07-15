@@ -823,7 +823,6 @@
 		}
 
 		private function updateExerciseDataLog(){
-			echo 'test';
 			if($this->get_request_method() != "POST"){
 				$this->response('',406);
 			}
